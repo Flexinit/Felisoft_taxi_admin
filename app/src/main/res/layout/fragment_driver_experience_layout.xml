@@ -1,0 +1,247 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:background="@drawable/african_drupp_pattern">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/padding_activity"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/padding_activity"
+        tools:background="@color/app_theme_color">
+
+        <EditText
+            android:id="@+id/et_license_num"
+            style="@style/EditTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/license_number"
+            android:inputType="text" />
+
+        <Space style="@style/SpaceMiniTrim" />
+
+        <TextView
+            style="@style/TextView.White.Small"
+            android:text="@string/do_you_have_authenticated" />
+
+        <RadioGroup
+            android:id="@+id/rg_driver_lis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_yes"
+                style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/colorWhite"
+                android:text="@string/yes"
+                android:textColor="@color/colorWhite" />
+
+            <RadioButton
+                android:id="@+id/rb_no"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/colorWhite"
+                android:text="@string/no"
+                android:textColor="@color/colorWhite" />
+        </RadioGroup>
+
+        <Space style="@style/SpaceMiniTrim" />
+
+        <LinearLayout
+            android:id="@+id/container_licence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/container_front_image"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_margin_10"
+                android:layout_weight="1"
+                android:background="@drawable/text_view_no_background_border"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_front_image"
+                    style="@style/TextView.White.Small"
+                    android:layout_width="wrap_content"
+                    android:drawableStart="@drawable/ic_id_card"
+                    android:drawablePadding="@dimen/activity_margin_10"
+                    android:gravity="center"
+                    android:text="@string/front" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_front_license"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_checked"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_back_image"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/text_view_no_background_border"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_back_image"
+                    style="@style/TextView.White.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_id_card"
+                    android:drawablePadding="@dimen/activity_margin_10"
+                    android:gravity="center"
+                    android:text="@string/rear" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_back_license"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_checked"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <Space style="@style/SpaceMiniTrim" />
+
+        <TextView
+            android:id="@+id/tvExpiry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="10dp"
+            android:drawableStart="@drawable/ic_today"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:hint="@string/select_expiry_date"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white" />
+
+        <TextView
+            style="@style/TextView.White.Small"
+            android:text="@string/ever_driven_commercially_or_used" />
+
+        <RadioGroup
+            android:id="@+id/rg_experience"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/no_exp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/yes_exp"
+                style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/colorWhite"
+                android:text="@string/yes"
+                android:textColor="@color/colorWhite" />
+
+            <RadioButton
+                android:id="@+id/no_exp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/colorWhite"
+                android:text="@string/no"
+                android:textColor="@color/colorWhite" />
+        </RadioGroup>
+
+        <Space style="@style/SpaceMiniTrim" />
+
+        <LinearLayout
+            android:id="@+id/container_experience"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextView.White.Small"
+                    android:layout_marginEnd="@dimen/activity_margin_10"
+                    android:text="@string/how_many_years" />
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/spinner_experience"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/min_spinner_height"
+                    app:ms_background_selector="@drawable/spinner_with_border"
+                    app:ms_text_color="@color/colorBlack"
+                    tools:visibility="visible" />
+            </LinearLayout>
+
+            <Space style="@style/SpaceMini" />
+
+            <EditText
+                android:id="@+id/et_payment_"
+                style="@style/EditTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/please_give_details"
+                android:minHeight="@dimen/edit_text_detail_height" />
+
+        </LinearLayout>
+
+
+        <Space style="@style/SpaceMiniOverride" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btCancelRide"
+                style="@style/Button.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="center"
+                android:minWidth="@dimen/min_button_width"
+                android:text="@string/back" />
+
+            <Button
+                android:id="@+id/btStartRide"
+                style="@style/Button.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:minWidth="@dimen/min_button_width"
+                android:text="@string/next" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

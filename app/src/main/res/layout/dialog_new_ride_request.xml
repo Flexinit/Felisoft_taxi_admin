@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorTransparent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorTransparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/profileToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="You've got a request!"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/font_medium"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/driver_status"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/driver_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:checked="true"
+                    android:textOff="@string/offline"
+                    android:textOn="@string/available"
+                    android:thumb="@drawable/custom_switch_selector"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_goneMarginEnd="@dimen/activity_margin_10"
+                    app:track="@drawable/custom_track" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.uzairiqbal.circulartimerview.CircularTimerView
+        android:id="@+id/timer"
+        android:layout_width="@dimen/image_size_large"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:backgroundColor="@color/colorWhite"
+        app:isClockwise="false"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:prefix="0:"
+        app:progressBackgroundColor="@color/colorWhite"
+        app:progressColor="@color/app_theme_color"
+        app:progressText="30"
+        app:progressTextColor="@color/colorWhite"
+        app:startingPoint="top"
+        app:textSize="25sp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/box_background_corner_radius_upper"
+        android:backgroundTint="@color/colorWhite"
+        android:paddingBottom="@dimen/spacing_Large"
+        app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_rider_image"
+            android:layout_width="@dimen/image_size_normal"
+            android:layout_height="@dimen/image_size_normal"
+            android:src="@drawable/ic_profile"
+            app:layout_constraintStart_toStartOf="@id/guideline_main_left"
+            app:layout_constraintTop_toTopOf="@id/tv_rider_name" />
+
+        <TextView
+            android:id="@+id/tv_rider_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:fontFamily="@font/roboto_medium"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintBottom_toTopOf="@+id/rating_bar_rider"
+            app:layout_constraintStart_toEndOf="@+id/iv_rider_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.willy.ratingbar.ScaleRatingBar
+            android:id="@+id/rating_bar_rider"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/tv_reviews"
+            app:layout_constraintStart_toStartOf="@id/tv_rider_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rider_name"
+            app:srb_clickable="false"
+            app:srb_drawableEmpty="@drawable/ic_star_border"
+            app:srb_drawableFilled="@drawable/ic_star_full"
+            app:srb_isIndicator="false"
+            app:srb_minimumStars="0"
+            app:srb_numStars="5"
+            app:srb_starHeight="20dp"
+            app:srb_starPadding="1dp"
+            app:srb_starWidth="20dp"
+            app:srb_stepSize="0.5" />
+
+
+        <TextView
+            android:id="@+id/tv_reviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="54 Reviews"
+            android:textSize="@dimen/font_x_small"
+            app:layout_constraintBottom_toTopOf="@+id/container_ride_type"
+            app:layout_constraintStart_toStartOf="@id/rating_bar_rider"
+            app:layout_constraintTop_toBottomOf="@+id/rating_bar_rider" />
+
+        <ImageView
+            android:id="@+id/tvPhoneNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_chat"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_call_green" />
+
+        <ImageView
+            android:id="@+id/btn_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPhoneNum"
+            app:layout_constraintEnd_toEndOf="@id/guideline_main_right"
+            app:layout_constraintTop_toTopOf="@+id/tvPhoneNum"
+            app:srcCompat="@drawable/ic_message_green" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_main_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_main_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_center_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <RelativeLayout
+            android:id="@+id/container_ride_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_x_large"
+            android:background="@drawable/box_background"
+            android:paddingStart="8dp"
+            android:paddingTop="@dimen/spacing_medium"
+            android:paddingEnd="8dp"
+            android:paddingBottom="@dimen/spacing_medium"
+            app:layout_constraintBottom_toTopOf="@+id/container_payment_method"
+            app:layout_constraintEnd_toEndOf="@id/guideline_main_right"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/guideline_main_left"
+            app:layout_constraintTop_toBottomOf="@+id/tv_reviews">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="start"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Ride Type"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/font_small" />
+
+            <TextView
+                android:id="@+id/tv_ride_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textSize="15dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/container_payment_method"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_x_large"
+            android:background="@drawable/box_background"
+            android:paddingStart="8dp"
+            android:paddingTop="@dimen/spacing_medium"
+            android:paddingEnd="8dp"
+            android:paddingBottom="@dimen/spacing_medium"
+            app:layout_constraintBottom_toTopOf="@id/btCancelRide"
+            app:layout_constraintEnd_toEndOf="@id/guideline_main_right"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/guideline_main_left"
+            app:layout_constraintTop_toBottomOf="@+id/container_ride_type">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="start"
+                android:text="Payment Method"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textSize="@dimen/font_small" />
+
+            <TextView
+                android:id="@+id/tv_payment_method"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/roboto_medium"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btStartRide"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_size_normal"
+            android:layout_above="@+id/have_an_account"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/spacing_Large"
+            android:background="@drawable/round_corner_button"
+            android:minWidth="@dimen/min_button_width"
+            android:text="Accept"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font_x_small"
+            app:layout_constraintEnd_toEndOf="@id/guideline_main_right"
+            app:layout_constraintStart_toStartOf="@+id/guideline_center_right"
+            app:layout_constraintTop_toTopOf="@+id/btCancelRide" />
+
+        <Button
+            android:id="@+id/btCancelRide"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_size_normal"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/spacing_Large"
+            android:layout_marginBottom="@dimen/spacing_Large"
+            android:background="@drawable/round_corner_button_unfilled"
+            android:minWidth="@dimen/min_button_width"
+            android:text="Decline"
+            android:textAllCaps="false"
+            android:textSize="@dimen/font_x_small"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_center_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/guideline_main_left"
+            tools:layout_editor_absoluteY="191dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/app_bar_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_bottom" />
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_close_white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

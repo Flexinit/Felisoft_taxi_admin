@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/middle_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_location_title"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/drupp_location" />
+
+
+    <TextView
+        android:id="@+id/tv_location_title"
+        style="@style/TextView.Black.Large.Bold"
+        android:layout_below="@id/tv_location_title"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:text="@string/gps_turned_off" />
+
+    <TextView
+        style="@style/TextView.Black.Small"
+        android:layout_below="@id/tv_location_title"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:text="@string/allow_drupp_to_turn_on" />
+
+    <Button
+        android:id="@+id/btn_allow"
+        style="@style/Button.Black"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:text="@string/turn_on_gps"
+        android:textAllCaps="true" />
+
+</RelativeLayout>

@@ -1,0 +1,227 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:background="@drawable/african_drupp_pattern">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btStartRide"
+        android:paddingStart="@dimen/padding_activity"
+        android:paddingEnd="@dimen/padding_activity"
+        tools:background="@color/colorBlack">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:id="@+id/et_first_name"
+                style="@style/EditTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/first_name"
+                android:inputType="textPersonName" />
+
+            <Space style="@style/SpaceMiniTrim" />
+
+            <EditText
+                android:id="@+id/et_last_name"
+                style="@style/EditTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/last_name"
+                android:inputType="textPersonName" />
+
+            <Space style="@style/SpaceMiniTrim" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/et_age"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_horizontal"
+                    android:layout_weight="1"
+                    android:background="@color/light_gray"
+                    android:enabled="false"
+                    android:gravity="center|start"
+                    android:hint="@string/age"
+                    android:inputType="numberSigned"
+                    android:minHeight="40dp"
+                    android:paddingStart="@dimen/padding_10"
+                    android:textColor="@color/colorBlack" />
+
+                <EditText
+                    android:id="@+id/et_dob"
+                    style="@style/EditTextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/date_of_birth"
+                    android:inputType="date" />
+            </LinearLayout>
+
+            <Space style="@style/SpaceMiniTrim" />
+
+            <com.isapanah.awesomespinner.AwesomeSpinner
+                android:id="@+id/spinner_marital"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner_with_border"
+                android:padding="0dp"
+                app:spinnerDirection="ltr"
+                app:spinnerHint="@string/marital_status" />
+
+            <Space style="@style/SpaceMiniTrim" />
+
+            <EditText
+                android:id="@+id/et_password"
+                style="@style/EditTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password"
+                android:inputType="textPassword" />
+
+            <Space style="@style/SpaceMiniTrim" />
+
+            <EditText
+                android:id="@+id/et_address"
+                style="@style/EditTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/address"
+                android:inputType="textPostalAddress" />
+
+            <Space style="@style/SpaceMiniTrim" />
+
+            <EditText
+                android:id="@+id/et_phone"
+                style="@style/EditTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:inputType="phone" />
+
+            <Space style="@style/SpaceMiniTrim" />
+
+            <EditText
+                android:id="@+id/et_email"
+                style="@style/EditTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress" />
+
+            <Space style="@style/SpaceMiniTrim" />
+
+            <EditText
+                android:id="@+id/et_social_handle"
+                style="@style/EditTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/facebook"
+                android:inputType="textEmailAddress" />
+
+            <Space style="@style/SpaceMiniTrim" />
+
+            <EditText
+                android:id="@+id/et_twitter_handle"
+                style="@style/EditTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/twitter_handle"
+                android:inputType="textEmailAddress" />
+
+            <Space style="@style/SpaceMiniTrim" />
+
+            <EditText
+                android:id="@+id/et_insta_handle"
+                style="@style/EditTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/instagram_handle"
+                android:inputType="textEmailAddress" />
+
+            <Space style="@style/SpaceMiniOverride" />
+
+            <LinearLayout
+                android:id="@+id/container_upload_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/text_view_no_background_border"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/container_upload_sub_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_image_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/activity_margin_10"
+                        android:src="@drawable/ic_profile"
+                        android:tint="@color/colorWhite"
+                        android:visibility="gone" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_profile_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/padding_10"
+                        android:src="@drawable/ic_user_silhouette" />
+
+
+                    <TextView
+                        style="@style/TextView.White.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/upload_profile_image" />
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_checked"
+                    android:tint="@color/colorWhite"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+            <Space style="@style/SpaceMini" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btStartRide"
+        style="@style/Button.White"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/activity_margin_10"
+        android:minWidth="@dimen/min_button_width"
+        android:text="@string/next" />
+
+</RelativeLayout>

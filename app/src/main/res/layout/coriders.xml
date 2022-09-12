@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/rel_w1"
+            android:background="@drawable/round_solid_corners_white_view">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/lin_rider1"
+                >
+
+                <TextView
+                    style="@style/TextView_style_d"
+                    android:text="Jhonny"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:layout_marginStart="5dp"/>
+                <TextView
+                    style="@style/TextView_style_d"
+                    android:text="@string/indore"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textSize="15sp"/>
+                <TextView
+                    style="@style/TextView_style_d"
+                    android:text="@string/dewas"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textSize="15sp"/>
+                <TextView
+                    style="@style/TextView_style_d"
+                    android:text="Start"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textSize="15sp"/>
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lin_rider1"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:id="@+id/rel_rider1">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_account"
+                    android:layout_margin="15dp"
+                    android:id="@+id/image_rider1"/>
+
+
+                <TextView
+                    style="@style/TextView_style_d"
+                    android:text="@string/_5_12"
+                    android:layout_toRightOf="@id/image_rider1"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/tvFareRate1"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_phone_receiver"
+                    android:layout_toRightOf="@id/tvFareRate1"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    app:civ_border_width="1dp"/>
+
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:id="@+id/rel_w2"
+        android:background="@drawable/round_solid_corners_white_view">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/lin_rider2"
+            >
+
+            <TextView
+                style="@style/TextView_style_d"
+                android:text="Jhonny"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="15sp"
+                android:layout_marginStart="5dp"/>
+            <TextView
+                style="@style/TextView_style_d"
+                android:text="@string/indore"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="15sp"/>
+            <TextView
+                style="@style/TextView_style_d"
+                android:text="@string/dewas"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="15sp"/>
+            <TextView
+                style="@style/TextView_style_d"
+                android:text="Start"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="15sp"/>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lin_rider2"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/rel_rider2">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_account"
+                android:layout_margin="15dp"
+                android:id="@+id/image_rider2"/>
+
+
+            <TextView
+                style="@style/TextView_style_d"
+                android:text="@string/_5_12"
+                android:layout_toRightOf="@id/image_rider2"
+                android:layout_centerVertical="true"
+                android:id="@+id/tvFareRate2"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_phone_receiver"
+                android:layout_toRightOf="@id/tvFareRate2"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                app:civ_border_width="1dp"/>
+
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:id="@+id/rel_w3"
+        android:background="@drawable/round_solid_corners_white_view">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/lin_rider3"
+            >
+
+            <TextView
+                style="@style/TextView_style_d"
+                android:text="Jhonny"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="15sp"
+                android:layout_marginStart="5dp"/>
+            <TextView
+                style="@style/TextView_style_d"
+                android:text="@string/indore"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="15sp"/>
+            <TextView
+                style="@style/TextView_style_d"
+                android:text="@string/dewas"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="15sp"/>
+            <TextView
+                style="@style/TextView_style_d"
+                android:text="Start"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="15sp"/>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lin_rider2"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/rel_rider3">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_account"
+                android:layout_margin="15dp"
+                android:id="@+id/image_rider3"/>
+
+
+            <TextView
+                style="@style/TextView_style_d"
+                android:text="@string/_5_12"
+                android:layout_toRightOf="@id/image_rider3"
+                android:layout_centerVertical="true"
+                android:id="@+id/tvFareRate3"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_phone_receiver"
+                android:layout_toRightOf="@id/tvFareRate3"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                app:civ_border_width="1dp"/>
+
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

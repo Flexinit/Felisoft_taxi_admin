@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite">
+
+    <RelativeLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30dp">
+
+        <TextView
+            android:id="@+id/tvGettingBored"
+            style="@style/TextView_style_d"
+            android:layout_centerHorizontal="true"
+            android:text="@string/getting_bored"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvIncKnow"
+            style="@style/TextView_style_d"
+            android:layout_below="@id/tvGettingBored"
+            android:layout_centerHorizontal="true"
+            android:text="@string/increase_your_knowledge_with_latest_news_now"
+            android:textAlignment="center"
+            android:textSize="22dp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvIncKnow"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btYes"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:text="@string/yes"
+                android:textColor="@color/pure_white" />
+
+            <Button
+                android:id="@+id/btNo"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/grey"
+                android:text="@string/no"
+                android:textColor="@color/pure_white" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

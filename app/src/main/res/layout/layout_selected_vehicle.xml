@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/pure_white">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/car"
+        app:civ_border_width="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/image_selected_car"/>
+
+    <TextView
+        android:id="@+id/tvMini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MINI"
+        android:textStyle="bold"
+        android:layout_below="@id/image_selected_car"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/tvMini"
+        android:layout_margin="20dp"
+        android:id="@+id/par_lin">
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            
+            <TextView
+                style="@style/TextView_style_d"
+                android:text="@string/capacity"
+                android:textColor="@color/grey"/>
+
+            <TextView
+                style="@style/TextView_style_d"
+                android:textColor="@color/grey"
+                android:text="@string/fare"/>
+            <TextView
+                style="@style/TextView_style_d"
+                android:textColor="@color/grey"
+                android:text="@string/per_minute_wait_time"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextView_style_d"
+                android:text="@string/_4_people"
+                android:textColor="@color/grey"/>
+
+            <TextView
+                style="@style/TextView_style_d"
+                android:textColor="@color/grey"
+                android:text="@string/_4_55"/>
+            <TextView
+                style="@style/TextView_style_d"
+                android:textColor="@color/grey"
+                android:text="@string/_0_55"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:text="@string/confirm_go"
+        android:layout_margin="15dp"
+        android:background="@color/colorBlack"
+        android:textColor="@color/pure_white"
+        android:layout_below="@id/par_lin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+</RelativeLayout>

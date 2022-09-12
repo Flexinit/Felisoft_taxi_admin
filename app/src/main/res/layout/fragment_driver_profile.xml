@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rel_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="@dimen/cardview_default_radius"
+        app:cardElevation="@dimen/cardview_default_elevation">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:background="@color/pure_white"
+            android:padding="8dp"
+            android:visibility="visible"
+            tools:visibility="visible">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_car_image"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/car"
+                app:civ_border_width="1dp" />
+
+            <TextView
+                android:id="@+id/tv_vehicle_number"
+                style="@style/TextView_style_d"
+                android:layout_below="@id/iv_car_image"
+                android:text="@string/dummy_vehicle_number"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_vehicle_color"
+                style="@style/TextView_style_d"
+                android:layout_below="@id/tv_vehicle_number"
+                android:text="@string/dummy_vehicle_color"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_vehicle_name"
+                style="@style/TextView_style_d"
+                android:layout_below="@id/tv_vehicle_number"
+                android:layout_marginStart="4dp"
+                android:layout_toEndOf="@id/tv_vehicle_color"
+                android:text="@string/dummy_vehicle_Brand"
+                android:textSize="14sp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_driver_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_account"
+                app:civ_border_width="1dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_driver_image"
+                android:layout_alignParentEnd="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@id/tv_driver_name"
+                    style="@style/TextView_style_d"
+                    android:text="@string/dummy_person_name"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="@string/rating"
+                    android:src="@drawable/ic_star" />
+
+                <TextView
+                    android:id="@+id/tv_rating"
+                    style="@style/TextView_style_d"
+                    android:padding="2dp"
+                    android:text="@string/dummy_person_rating"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

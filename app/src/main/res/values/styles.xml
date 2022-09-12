@@ -1,0 +1,441 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/pure_white</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/grey</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
+        <item name="drawerArrowStyle">@style/DrawerHumburgerStyle</item>
+    </style>
+    <style name="DrawerHumburgerStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@android:color/white</item>
+    </style>
+    <style name="AppTheme_FullScreenDialog" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="CustomDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:datePickerStyle">@style/MyDatePickerStyle</item>
+        <item name="android:timePickerStyle">@style/MyTimePickerStyle</item>
+    </style>
+
+    <style name="MyDatePickerStyle" parent="@android:style/Widget.Material.DatePicker">
+        <item name="android:datePickerMode">spinner</item>
+    </style>
+    <style name="ApptextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="MyTimePickerStyle" parent="@android:style/Widget.Material.TimePicker">
+        <item name="android:timePickerMode">spinner</item>
+    </style>
+
+    <style name="DialogStyle" parent="Base.Theme.AppCompat.Dialog">
+        <item name="android:windowMinWidthMajor">97%</item>
+        <item name="android:windowMinWidthMinor">97%</item>
+    </style>
+
+    <style name="FullScreenDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <!--EditTextInputLayout-->
+    <style name="ErrorText" parent="TextAppearance.Design.Error">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorRed</item>
+    </style>
+
+    <style name="HintText" parent="TextAppearance.Design.Hint">
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+    <!--TextView-->
+    <style name="TextView" parent="android:Widget.TextView">
+        <!--        <item name="android:fontFamily">@font/roboto_regular</item>-->
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+    <style name="TextView.Black.Small" parent="TextView">
+
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="TextView.Black.Mini" parent="TextView.Black.Small">
+        <item name="android:textSize">12sp</item>
+
+    </style>
+
+    <style name="TextView.Black.Small.Bold" parent="TextView.Black.Small">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="TextView.Black.Medium" parent="TextView.Black.Small">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextView.Black.Medium.Bold" parent="TextView.Black.Medium">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="TextView.Black.Big" parent="TextView.Black.Small">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextView.Black.Big.Bold" parent="TextView.Black.Big">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="TextView.Black.Large" parent="TextView.Black.Big">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="TextView.Black.Large.Bold" parent="TextView.Black.Large">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="TextView.Grey" parent="TextView">
+        <!--        <item name="android:fontFamily">@font/roboto_medium</item>-->
+    </style>
+
+    <style name="TextView.Grey.Small" parent="TextView">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+
+    <style name="TextView.Grey.Medium" parent="TextView.Grey">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextView.Grey.Small.Bold" parent="TextView.Grey.Small">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="TextView.Grey.Mini" parent="TextView.Grey.Small">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextView.White" parent="TextView">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="TextView.White.Big" parent="TextView.White">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextView.White.Big.Bold" parent="TextView.White.Big">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="TextView.White.Medium" parent="TextView.White.Big">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextView.White.Medium.Bold" parent="TextView.White.Medium">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="TextView.White.Small" parent="TextView.White">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="TextView.White.Small.Bold" parent="TextView.White.Small">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="TextView.White.Small.Italic" parent="TextView.White.Small">
+        <item name="android:fontFamily">@font/roboto_regular_italic</item>
+    </style>
+
+    <style name="TextView.Red.Small" parent="TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorRed</item>
+    </style>
+
+    <style name="TextView.Red.Small.Bold" parent="TextView.Red.Small">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="TextView.Green" parent="TextView">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/colorLightGreen</item>
+    </style>
+
+    <style name="TextView.Green.Small" parent="TextView.Green">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextView.Green.Small.Bold" parent="TextView.Green.Small">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="TextView.Parent" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+
+
+    <style name="TextView_style_a" parent="TextView.Parent">
+        <item name="android:text">Sample Text</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="TextView_style_b" parent="TextView.Parent">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textColorHint">@color/colorWhite</item>
+    </style>
+
+    <style name="TextView_style_c" parent="TextView.Parent">
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="TextView_style_d" parent="TextView.Parent">
+        <item name="android:textSize">18sp</item>
+        <item name="android:color">@color/colorBlack</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="TextView_style_bold" parent="TextView.Parent">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColorHint">@color/colorWhite</item>
+    </style>
+
+    <style name="TextView_style_Ittalic" parent="TextView.Parent">
+        <item name="android:text">Sample Text</item>
+        <item name="android:fontFamily">@font/roboto_regular_italic</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="TextView_style_Password" parent="TextView.Parent">
+        <item name="android:textSize">18sp</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:ems">5</item>
+        <item name="android:hint">Enter a Password</item>
+        <item name="android:textColorHint">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">32dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:backgroundTint">@color/colorWhite</item>
+    </style>
+
+    <style name="TextView_style_Email" parent="TextView.Parent">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:inputType">textEmailAddress</item>
+        <item name="android:ems">5</item>
+        <item name="android:hint">Enter your Email</item>
+        <item name="android:textColorHint">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:backgroundTint">@color/colorWhite</item>
+    </style>
+
+    <style name="EditTextInput"></style>
+
+    <style name="EditTextInputLayout">
+        <item name="android:padding">@dimen/edittext_min_padding</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:backgroundTint">@android:color/black</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+    <style name="EditTextInputLayoutb">
+        <item name="android:padding">@dimen/edittext_min_padding</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:backgroundTint">@android:color/white</item>
+        <item name="android:textColorHint">@android:color/white</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="EditTextInput.Border">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:minHeight">40dp</item>
+
+    </style>
+
+
+    <style name="TextView_style_phone" parent="TextView.Parent">
+        <item name="android:textSize">18sp</item>
+        <item name="android:inputType">phone</item>
+        <item name="android:ems">5</item>
+        <item name="android:hint">Enter your phone number</item>
+        <item name="android:textColorHint">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:backgroundTint">@color/colorWhite</item>
+    </style>
+
+    <style name="Button.Black" parent="android:Widget.Holo.Button.Borderless">
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:elevation" tools:targetApi="lollipop">@dimen/size_2</item>
+        <item name="android:translationZ" tools:targetApi="lollipop">0dp</item>
+        <item name="android:clipChildren">false</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:letterSpacing" tools:targetApi="lollipop">.05</item>
+        <item name="android:stateListAnimator" tools:targetApi="lollipop">@null</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/button_black</item>
+        <item name="android:text">Pay</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:layout_width">match_parent</item>ß
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/font_14</item>
+
+    </style>
+
+    <style name="Button.White" parent="android:Widget.Holo.Button.Borderless">
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:minHeight">32dp</item>
+        <item name="android:elevation" tools:targetApi="lollipop">@dimen/size_2</item>
+        <item name="android:translationZ" tools:targetApi="lollipop">0dp</item>
+        <item name="android:clipChildren">false</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:letterSpacing" tools:targetApi="lollipop">.05</item>
+        <item name="android:stateListAnimator" tools:targetApi="lollipop">@null</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/button_white_with_state</item>
+        <item name="android:text">Pay</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:layout_width">match_parent</item>ß
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/font_14</item>
+
+    </style>
+
+    <style name="SpinnerStyle" parent="Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="NavigationTheme" parent="AppTheme">
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_height">15dp</item>
+        <item name="android:layout_marginBottom">02dp</item>
+    </style>
+
+    <style name="SwitchCompatTheme" parent="Widget.AppCompat.CompoundButton.Switch">
+        <item name="colorControlActivated">@color/colorLightGreen</item>
+    </style>
+
+    <style name="MySwitch" parent="@style/Widget.AppCompat.CompoundButton.Switch">
+        <item name="android:colorControlActivated">@color/colorLightGreen</item>
+        <item name="android:textColorPrimaryDisableOnly">#b71c1c</item>
+        <item name="android:colorForeground">#f57f17</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat</item>
+    </style>
+
+    <style name="BrandedSwitch.control" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">@color/colorBlack</item>
+        <item name="colorSwitchThumbNormal">@color/colorWhite</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/colorLightGrey</item>
+        <item name="colorControlActivated">@color/colorBlack</item>
+    </style>
+
+
+    <style name="Black_Button" parent="TextAppearance.AppCompat.Button">
+        <item name="android:background">@drawable/round_corner_button_black</item>
+        <item name="android:textColor">@color/pure_white</item>
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">45dp</item>
+    </style>
+
+    <style name="AppTheme.ActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        ...
+        <item name="actionMenuTextColor">#ffff</item>
+        ...
+    </style>
+
+    <style name="Custom.Widget.SwitchCompat" parent="Widget.AppCompat.CompoundButton.Switch">
+        <item name="android:textColorPrimary">@color/colorBlack
+        </item>  <!--textColor on activated state -->
+    </style>
+    <!--Space-->
+    <style name="Space">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?actionBarSize</item>
+    </style>
+
+
+    <style name="SpaceMiniTrim">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">10dp</item>
+    </style>
+
+    <style name="SpaceMini">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">20dp</item>
+    </style>
+
+    <style name="SpaceMiniOverride">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">35dp</item>
+    </style>
+
+    <style name="SpaceMega">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">80dp</item>
+    </style>
+
+    <dimen name="size_2">2dp</dimen>
+    <dimen name="font_14">14sp</dimen>
+
+</resources>

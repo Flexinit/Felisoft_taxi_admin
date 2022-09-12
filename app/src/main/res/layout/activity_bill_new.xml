@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/app_bar_layout"
+        layout="@layout/toolbar_common"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/rider_image"
+        android:layout_width="@dimen/image_size_normal"
+        android:layout_height="@dimen/image_size_normal"
+        android:src="@drawable/ic_profile"
+        app:layout_constraintStart_toStartOf="@id/guideline_main_left"
+        app:layout_constraintTop_toTopOf="@+id/tv_rider_name" />
+
+    <TextView
+        android:id="@+id/tv_rider_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Isaiah Obasi"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/font_medium"
+        app:layout_constraintStart_toEndOf="@+id/rider_image"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_layout" />
+
+    <com.willy.ratingbar.ScaleRatingBar
+        android:id="@+id/rating_bar_rider"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small"
+        app:layout_constraintStart_toStartOf="@id/tv_rider_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_rider_name"
+        app:srb_clickable="false"
+        app:srb_drawableEmpty="@drawable/ic_star_border"
+        app:srb_drawableFilled="@drawable/ic_star_full"
+        app:srb_isIndicator="false"
+        app:srb_minimumStars="0"
+        app:srb_numStars="5"
+        app:srb_starHeight="20dp"
+        app:srb_starPadding="1dp"
+        app:srb_starWidth="20dp"
+        app:srb_stepSize="0.5" />
+
+    <TextView
+        android:id="@+id/tv_reviews_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="54 Reviews"
+        android:textSize="@dimen/font_small"
+        app:layout_constraintStart_toStartOf="@+id/rating_bar_rider"
+        app:layout_constraintTop_toBottomOf="@+id/rating_bar_rider" />
+
+    <ImageView
+        android:id="@+id/btn_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_reviews_number"
+        app:layout_constraintEnd_toStartOf="@+id/btn_chat"
+        app:layout_constraintTop_toTopOf="@+id/tv_rider_name"
+        app:srcCompat="@drawable/ic_call_green" />
+
+    <ImageView
+        android:id="@+id/btn_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_call"
+        app:layout_constraintEnd_toEndOf="@id/guideline_main_right"
+        app:layout_constraintTop_toTopOf="@+id/btn_call"
+        app:srcCompat="@drawable/ic_message_green" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_reviews_number" />
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btDone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/separator"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_main_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_main_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_center_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.67" />
+
+    <Button
+        android:id="@+id/btDone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/spacing_Large"
+        android:background="@drawable/round_corner_button"
+        android:text="Done"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/imageView5"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_main_right"
+        app:layout_constraintStart_toStartOf="@+id/guideline_main_left" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/image_size_normal"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/car_map_drawable"
+        app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/app_bar_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_bottom" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.78" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

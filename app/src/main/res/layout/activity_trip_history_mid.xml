@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.TripHistoryMid">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_toolbar_schedule" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvDate"
+                style="@style/TextView.Black.Small.Bold"
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:text="@string/date" />
+
+            <TextView
+                android:id="@+id/tv_date_to"
+                style="@style/TextView.Black.Small"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Space style="@style/SpaceMiniTrim" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvTime"
+                style="@style/TextView.Black.Small.Bold"
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:text="@string/_time" />
+
+
+            <TextView
+                android:id="@+id/tv_time"
+                style="@style/TextView.Black.Small"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <Space style="@style/SpaceMiniTrim" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvSource"
+                style="@style/TextView.Black.Small.Bold"
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:text="@string/from_" />
+
+            <TextView
+                android:id="@+id/tv_rider_source"
+                style="@style/TextView.Black.Small"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Space style="@style/SpaceMiniTrim" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvDestination"
+                style="@style/TextView.Black.Small.Bold"
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:text="@string/to_" />
+
+            <TextView
+                android:id="@+id/tvDestination"
+                style="@style/TextView.Black.Small"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Space style="@style/SpaceMiniTrim" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvNumCoRiders"
+                style="@style/TextView.Black.Small.Bold"
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:text="@string/no_of_co_rider" />
+
+            <TextView
+                android:id="@+id/tv_co_riders"
+                style="@style/TextView.Black.Small"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <Space style="@style/SpaceMiniTrim" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvDriverType"
+                style="@style/TextView.Black.Small.Bold"
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:text="@string/type_of_driver" />
+
+            <TextView
+                android:id="@+id/tv_driver_type"
+                style="@style/TextView.Black.Small"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <Space style="@style/SpaceMiniTrim" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvMessage"
+                style="@style/TextView.Black.Small.Bold"
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:text="@string/message" />
+
+            <TextView
+                android:id="@+id/tv_message"
+                style="@style/TextView.Black.Small"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <Space style="@style/SpaceMiniTrim" />
+
+        <ImageView
+            android:id="@+id/image_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/activity_margin_20"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_pencil" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/bottom_bar_pattern"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorBlack">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:adjustViewBounds="true"
+            android:alpha="0.75"
+            android:scaleType="matrix"
+            android:src="@drawable/drupp_pattern_3" />
+
+    </FrameLayout>
+</RelativeLayout>

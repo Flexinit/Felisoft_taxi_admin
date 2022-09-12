@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="12dp"
+        android:gravity="center"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/tvRide_Cancel"
+            style="@style/TextView.Black.Small.Bold"
+            android:layout_centerHorizontal="true"
+            android:text="@string/cancel_ride"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvYourRide"
+            style="@style/TextView.Black.Small"
+            android:layout_below="@id/tvRide_Cancel"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/ride_cancelled_by_the_user" />
+
+        <Button
+            android:id="@+id/btOk_clicked"
+            style="@style/Black_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvYourRide"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:minHeight="32dp"
+            android:text="@android:string/yes"
+            android:textAllCaps="false"
+            android:textSize="14sp" />
+    </RelativeLayout>
+</RelativeLayout>

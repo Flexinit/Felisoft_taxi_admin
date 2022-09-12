@@ -1,0 +1,60 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">20dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">10dp</dimen>
+    <dimen name="size_4">4dp</dimen>
+    <dimen name="nav_menu_width">220dp</dimen>
+    <dimen name="size_16">16dp</dimen>
+    <dimen name="size_20">20dp</dimen>
+    <dimen name="activity_margin_10">10dp</dimen>
+    <dimen name="edittext_min_padding">10dp</dimen>
+    <dimen name="toolbar_margin_end">5dp</dimen>
+    <dimen name="edit_text_border_width">1dp</dimen>
+    <dimen name="spacing_horizontal">10dp</dimen>
+    <dimen name="padding_activity">10dp</dimen>
+    <dimen name="min_button_width">128dp</dimen>
+    <dimen name="edit_text_detail_height">96dp</dimen>
+    <dimen name="min_spinner_height">48dp</dimen>
+    <dimen name="min_spinner_width">96dp</dimen>
+    <dimen name="min_button_height">24dp</dimen>
+    <dimen name="padding_card_view">20dp</dimen>
+    <dimen name="activity_padding_20">@dimen/activity_margin_20</dimen>
+    <dimen name="activity_margin_20">20dp</dimen>
+    <dimen name="padding_10">10dp</dimen>
+    <dimen name="edit_text_height">40dp</dimen>
+    <dimen name="activity_margin_15">15dp</dimen>
+    <dimen name="separator_min_height">1dp</dimen>
+    <dimen name="activity_margin_50">50dp</dimen>
+    <dimen name="home_pager_height">180dp</dimen>
+
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+    <dimen name="padding_small">@dimen/margin_small</dimen>
+    <dimen name="padding_medium">@dimen/margin_medium</dimen>
+    <dimen name="padding_large">@dimen/margin_large</dimen>
+    <dimen name="margin_xx_large">64dp</dimen>
+    <dimen name="margin_x_large">32dp</dimen>
+    <dimen name="bottom_pattern_height">24dp</dimen>
+
+    <dimen name="spacing_small">0dp</dimen>
+    <dimen name="spacing_medium">0dp</dimen>
+    <dimen name="spacing_Large">8dp</dimen>
+    <dimen name="spacing_x_large">12dp</dimen>
+
+    <dimen name="font_x_small">12sp</dimen>
+    <dimen name="font_small">14sp</dimen>
+    <dimen name="font_medium">18sp</dimen>
+    <dimen name="font_large">22sp</dimen>
+    <dimen name="font_xlarge">30sp</dimen>
+
+    <dimen name="image_size_normal">40dp</dimen>
+    <dimen name="image_size_large">120dp</dimen>
+
+    <dimen name="edit_text_large">90dp</dimen>
+
+    <dimen name="button_size_normal">28dp</dimen>
+</resources>

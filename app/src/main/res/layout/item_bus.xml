@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="@dimen/cardview_default_elevation"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:cardCornerRadius="@dimen/cardview_default_radius"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_rider_source"
+                    style="@style/TextView.Black.Medium.Bold"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:textAlignment="center" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.15"
+                    android:src="@drawable/ic_right_arrow_forward" />
+
+                <TextView
+                    android:id="@+id/tvDestination"
+                    style="@style/TextView.Black.Medium.Bold"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+
+            <Space style="@style/SpaceMiniTrim" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_start_time"
+                    style="@style/TextView.Black.Small"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/loading_data"
+                    android:textAlignment="center" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.15" />
+
+
+                <TextView
+                    android:id="@+id/tv_finish_time"
+                    style="@style/TextView.Black.Small"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <Space style="@style/SpaceMiniTrim" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/TextView.Black.Small.Bold"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.4"
+                    android:text="@string/remaining_capacity"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/tv_remaining_seats"
+                    style="@style/TextView.Black.Small"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.75"
+                    android:textAlignment="textStart" />
+            </LinearLayout>
+
+
+            <Space style="@style/SpaceMiniTrim" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/TextView.Black.Small.Bold"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.4"
+                    android:text="@string/status" />
+
+                <TextView
+                    style="@style/TextView.Black.Small"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.75" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25">
+
+            <TextView
+                android:id="@+id/tv_ride_started"
+                style="@style/TextView.Red.Small.Bold"
+                android:layout_centerInParent="true"
+                android:text="@string/ride_started"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_start_ride"
+                style="@style/Black_Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:minHeight="32dp"
+                android:text="@string/start_ride"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_right_arrow" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

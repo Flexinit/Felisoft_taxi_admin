@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rel_w1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/round_solid_corners_white_view">
+
+    <LinearLayout
+        android:id="@+id/lin_rider1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_Rider1_Name"
+            style="@style/TextView_style_d"
+            android:layout_width="0dp"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:text="Jhonny"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_Rider1_SCity"
+            style="@style/TextView_style_d"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/indore"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_Rider1_DCity"
+            style="@style/TextView_style_d"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/dewas"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/tv_Rider1_Button_Start"
+            style="@style/Black_Button"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_weight="1"
+            android:text="Start"
+            android:textSize="15sp" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel_rider1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lin_rider1"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_rider1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="15dp"
+            android:src="@drawable/ic_account" />
+
+
+        <TextView
+            android:id="@+id/tvFareRate1"
+            style="@style/TextView_style_d"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/image_rider1"
+            android:text="@string/_5_12" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/phone"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="30dp"
+            android:layout_toRightOf="@id/tvFareRate1"
+            android:src="@drawable/ic_phone_receiver"
+            app:civ_border_width="1dp" />
+
+
+    </RelativeLayout>
+</RelativeLayout>

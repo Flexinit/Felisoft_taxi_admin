@@ -1,0 +1,36 @@
+<com.txusballesteros.bubbles.BubbleLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/chat_head_root"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
+
+        <!--Profile image for the chat head.-->
+        <ImageView
+            android:id="@+id/chat_head_profile_iv"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_launcher_icon"
+            tools:ignore="ContentDescription" />
+
+        <!--Close button-->
+        <ImageView
+            android:id="@+id/close_btn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="40dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_cancel"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+
+</com.txusballesteros.bubbles.BubbleLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/app_theme_color"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/parent_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:paddingStart="30dp"
+        android:paddingLeft="30dp"
+        android:paddingEnd="30dp"
+        android:paddingRight="30dp">
+
+        <ImageView
+            android:id="@+id/menu_image"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:tint="@drawable/nav_item_text_state"
+            app:srcCompat="@drawable/ic_calendar_vector" />
+
+        <Space
+            style="@style/SpaceMiniTrim"
+            android:layout_width="5dp" />
+
+        <TextView
+            android:id="@+id/menu_text"
+            style="@style/TextView.Black.Small"
+            android:textAlignment="center"
+            android:textColor="@drawable/nav_item_text_state" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000" />
+</LinearLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_pattern_first"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/default_toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:background="#C4000000"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/im_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/drupp_logo" />
+
+        <TextView
+            android:id="@+id/tvVerificationCode"
+            style="@style/TextView.White.Big"
+            android:layout_width="match_parent"
+            android:layout_below="@id/im_logo"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:text="@string/ask_customer_otp" />
+
+        <TextView
+            android:id="@+id/tvVerific"
+            style="@style/TextView_style_a"
+            android:layout_below="@id/tvVerificationCode"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="15dp"
+            android:text="@string/verification_ride_code"
+            android:textAlignment="center"
+            android:textSize="17sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvPhoneNumber"
+            style="@style/TextView_style_a"
+            android:layout_below="@id/tvVerific"
+            android:layout_marginTop="10dp"
+            android:text="@string/default_phone_number"
+            android:textSize="17sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvResend"
+            style="@style/TextView_style_a"
+            android:layout_below="@id/tvPhoneNumber"
+            android:layout_marginTop="10dp"
+            android:inputType="number"
+            android:text="@string/resend_code"
+            android:textSize="17sp"
+            android:visibility="gone" />
+
+
+        <EditText
+            android:id="@+id/otp_verification_view"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:hint="@string/enter_verification_code"
+            android:inputType="number"
+            android:maxLength="6"
+            android:maxLines="1"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite" />
+
+        <com.mukesh.OtpView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvResend"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="72dp"
+            android:inputType="number"
+            android:itemBackground="#b8bbc1"
+            android:textColor="@android:color/white"
+            android:visibility="gone"
+            app:itemCount="4"
+            app:lineColor="@color/app_theme_color"
+            app:viewType="line" />
+
+        <Button
+            android:id="@+id/bt_submit"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/otp_verification_view"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/round_corner_button"
+            android:text="@string/start_ride"
+            android:textAllCaps="true" />
+
+    </RelativeLayout>
+</LinearLayout>

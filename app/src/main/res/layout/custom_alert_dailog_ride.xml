@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite">
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30dp">
+        <TextView
+            style="@style/TextView_style_d"
+            android:text="@string/ride_for_abuja"
+            android:textSize="22dp"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/tvRide_for"
+
+            />
+        <TextView
+            style="@style/TextView_style_d"
+            android:text="@string/_06_june_2019"
+            android:id="@+id/tvdate"
+            android:layout_below="@id/tvRide_for"
+            android:layout_marginTop="10dp"
+            android:textSize="14dp"
+            android:textStyle="bold"/>
+        <TextView
+            style="@style/TextView_style_d"
+            android:text="@string/__source"
+            android:id="@+id/tvSource"
+            android:layout_below="@id/tvdate"
+            android:layout_marginTop="10dp"
+            android:textSize="14dp"
+            android:textStyle="bold"/>
+        <TextView
+            style="@style/TextView_style_d"
+            android:text="@string/__destination"
+            android:id="@+id/tvDestination"
+            android:layout_below="@id/tvSource"
+            android:layout_marginTop="7dp"
+            android:textSize="14dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            style="@style/TextView_style_d"
+            android:text="@string/_5_12"
+            android:id="@+id/tvBillAmount"
+            android:layout_below="@id/tvDestination"
+            android:layout_marginTop="10dp"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            style="@style/TextView_style_d"
+            android:text="@string/indore"
+            android:id="@+id/tvSourcePlace"
+            android:layout_toRightOf="@id/tvSource"
+            android:layout_below="@id/tvdate"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/grey"
+            android:textSize="14dp"
+            />
+
+        <TextView
+            style="@style/TextView_style_d"
+            android:text="@string/dewas"
+            android:id="@+id/tvDestinationPlace"
+            android:layout_toRightOf="@id/tvDestination"
+            android:layout_below="@id/tvSource"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/grey"
+            android:textSize="14dp"
+            />
+        <Button
+            style="@style/Black_Button"
+            android:layout_below="@id/tvDestinationPlace"
+            android:layout_marginTop="50dp"
+            android:text="@string/view"
+            android:layout_width="175dp"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+</RelativeLayout>

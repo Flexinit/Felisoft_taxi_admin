@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/wallet_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/cardview_default_elevation"
+        app:cardBackgroundColor="@color/colorBlack"
+        app:cardCornerRadius="@dimen/cardview_default_radius"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                style="@style/TextView.White.Small"
+                android:text="@string/available_balance" />
+
+            <TextView
+                android:id="@+id/tv_avail_balance"
+                style="@style/TextView.White.Big.Bold" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_recent_transaction"
+        style="@style/TextView.Black.Small.Bold"
+        android:layout_below="@id/wallet_container"
+        android:text="@string/recent_transactions" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_transaction_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_recent_transaction" />
+
+
+</RelativeLayout>

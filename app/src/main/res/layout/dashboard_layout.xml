@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_common" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_bar_pattern"
+        android:layout_below="@id/toolbar"
+        android:layout_marginStart="@dimen/activity_margin_10"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/activity_margin_10"
+        android:orientation="vertical">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/cardview_default_radius"
+            app:cardElevation="@dimen/cardview_default_elevation">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_border_container"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_margin_10"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_dashboard_profile"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_user_silhouette" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_margin_10"
+                        android:layout_marginEnd="@dimen/activity_margin_10"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_welcome_user"
+                            style="@style/TextView.Black.Small"
+                            tools:text="@string/to" />
+
+                        <TextView
+                            android:id="@+id/tv_last_login"
+                            style="@style/TextView.Black.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            tools:text="@string/pool_ride" />
+
+                        <TextView
+                            android:id="@+id/tv_vehicle_name"
+                            style="@style/TextView.Black.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            tools:text="@string/pool_ride" />
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:id="@+id/iv_refresh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_refresh_black_24dp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <Space style="@style/SpaceMini" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_btn_payment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack"
+            app:cardCornerRadius="@dimen/cardview_default_radius"
+            app:cardElevation="@dimen/cardview_default_elevation"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_border_container"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/icon_wallet" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding_activity">
+
+                    <TextView
+                        style="@style/TextView.Black.Small.Bold"
+                        android:layout_gravity="center"
+                        android:text="@string/summary" />
+
+                    <TextView
+                        android:id="@+id/tv_balance"
+                        style="@style/TextView.Black.Small"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/padding_activity" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Space style="@style/SpaceMiniTrim" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_btn_rides"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_margin_10"
+                android:layout_weight="1"
+                app:cardCornerRadius="@dimen/cardview_default_radius"
+                app:cardElevation="@dimen/cardview_default_elevation"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_corner_green_border"
+                    android:paddingStart="10dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="8dp">
+
+                    <ImageView
+                        android:id="@+id/iv_card_payments"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_total_rides_png" />
+
+
+                    <TextView
+                        android:id="@+id/tv_rides"
+                        style="@style/TextView.Black.Small.Bold"
+                        android:layout_marginStart="16dp"
+                        android:text="0"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_card_payments"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_card_payments"
+                        app:layout_constraintStart_toEndOf="@+id/iv_card_payments"
+                        app:layout_constraintTop_toTopOf="@+id/iv_card_payments" />
+
+                    <TextView
+                        android:id="@+id/tv_card_payments"
+                        style="@style/TextView.Black.Small"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/rides"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_card_payments" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_margin_10"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                app:cardCornerRadius="@dimen/cardview_default_radius"
+                app:cardElevation="@dimen/cardview_default_elevation"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_border_container"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_activity">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/activity_margin_10"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/ic_sack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_earnings"
+                            style="@style/TextView.Black.Small.Bold"
+                            android:layout_gravity="center" />
+
+                        <TextView
+                            style="@style/TextView.Black.Small"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/padding_activity"
+                            android:text="@string/earnings" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <Space style="@style/SpaceMiniTrim" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_accepted_rides"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_margin_10"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                app:cardCornerRadius="@dimen/cardview_default_radius"
+                app:cardElevation="@dimen/cardview_default_elevation"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_border_container"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_activity">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="32.5dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/activity_margin_10"
+                        android:layout_weight="0.25"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_rides_completed" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_rides_accepted"
+                            style="@style/TextView.Black.Small.Bold"
+                            android:layout_gravity="center" />
+
+                        <TextView
+                            style="@style/TextView.Black.Small"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:padding="@dimen/padding_activity"
+                            android:text="@string/rides_completed" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_cancelled_rides"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_margin_10"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                app:cardCornerRadius="@dimen/cardview_default_radius"
+                app:cardElevation="@dimen/cardview_default_elevation"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_border_container"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_activity">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="32.5dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/activity_margin_10"
+                        android:layout_weight="0.25"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_rides_cancelled" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_rides_cancelled"
+                            style="@style/TextView.Black.Small.Bold"
+                            android:layout_gravity="center" />
+
+                        <TextView
+                            style="@style/TextView.Black.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:padding="@dimen/padding_activity"
+                            android:text="@string/ride_cancelled" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <Space style="@style/SpaceMiniTrim" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack"
+            app:cardCornerRadius="@dimen/cardview_default_radius"
+            app:cardElevation="@dimen/cardview_default_elevation"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_border_container"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_activity">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.25"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_km_travelled" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_km_travelled"
+                        style="@style/TextView.Black.Small.Bold"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        style="@style/TextView.Black.Small"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/padding_activity"
+                        android:text="@string/km_travelled" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/bottom_bar_pattern"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorBlack">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:adjustViewBounds="true"
+            android:alpha="0.75"
+            android:scaleType="centerCrop"
+            android:src="@drawable/drupp_pattern_10" />
+
+    </FrameLayout>
+
+
+</RelativeLayout>

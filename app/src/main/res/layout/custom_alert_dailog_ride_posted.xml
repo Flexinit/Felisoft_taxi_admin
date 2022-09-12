@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite">
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="25dp">
+
+        <TextView
+            android:id="@+id/tvRidePosted"
+            style="@style/TextView_style_d"
+            android:layout_centerHorizontal="true"
+            android:text="@string/ride_posted_successfully"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btOk"
+            style="@style/Black_Button"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/tvRidePosted"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="@string/ok" />
+
+    </RelativeLayout>
+</RelativeLayout>

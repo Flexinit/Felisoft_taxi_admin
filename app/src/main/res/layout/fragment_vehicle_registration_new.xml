@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_container"
+    android:background="@color/app_theme_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_main_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_main_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.09"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_main_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.91"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btStartRide"
+        app:layout_constraintEnd_toStartOf="@id/guideline_main_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_main_left"
+        app:layout_constraintTop_toBottomOf="@id/guideline_main_top"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            style="@style/ApptextAppearance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <!--<com.isapanah.awesomespinner.AwesomeSpinner
+                android:id="@+id/spinner_driver_type"
+                style="@style/SpinnerStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/spinner_with_border"
+                android:minHeight="@dimen/min_spinner_height"
+                android:padding="0dp"
+                app:spinnerDirection="ltr"
+                app:spinnerHint="@string/driver_type" />
+
+-->
+
+
+                <LinearLayout
+                    android:id="@+id/container_driver_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextView.White.Small"
+                        android:text="Driver Type"
+                        android:textSize="14sp" />
+
+                    <Space style="@style/SpaceMiniTrim" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_driver_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/car_driver"
+                            style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@android:color/black"
+                            android:text="Car driver"
+                            android:textColor="@android:color/black" />
+
+                        <RadioButton
+                            android:id="@+id/bus_driver"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@android:color/black"
+                            android:checked="true"
+                            android:text="Bus Driver"
+                            android:textColor="@android:color/black" />
+
+                        <RadioButton
+                            android:id="@+id/keke_driver"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@android:color/black"
+                            android:checked="true"
+                            android:text="Keke Driver"
+                            android:textColor="@android:color/black" />
+                    </RadioGroup>
+
+                    <Space style="@style/SpaceMiniTrim" />
+
+                </LinearLayout>
+
+                <Space
+                    style="@style/SpaceMini"
+                    android:layout_width="@dimen/activity_horizontal_margin" />
+
+
+                <com.isapanah.awesomespinner.AwesomeSpinner
+                    android:id="@+id/spinner_car_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/spinner_with_border"
+                    android:minHeight="@dimen/min_spinner_height"
+                    android:padding="0dp"
+                    android:visibility="gone"
+                    app:spinnerDirection="ltr"
+                    app:spinnerHint="@string/vehicle_type" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_condition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextView.White.Small"
+                    android:text="Condition"
+                    android:textSize="14sp" />
+
+                <Space style="@style/SpaceMiniTrim" />
+
+                <RadioGroup
+                    android:id="@+id/rg_car_condition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/condition_neat"
+                        style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@android:color/black"
+                        android:checked="true"
+                        android:text="Neat"
+                        android:textColor="@android:color/black" />
+
+                    <RadioButton
+                        android:id="@+id/condition_old"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@android:color/black"
+                        android:text="Old"
+                        android:textColor="@android:color/black" />
+
+                    <RadioButton
+                        android:id="@+id/condition_new"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@android:color/black"
+                        android:text="New"
+                        android:textColor="@android:color/black" />
+                </RadioGroup>
+
+                <Space style="@style/SpaceMiniTrim" />
+
+            </LinearLayout>
+
+
+            <EditText
+                android:id="@+id/et_car_type"
+                style="@style/ApptextAppearance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:focusable="false"
+                android:hint="@string/car_type"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/et_vehicle_nu"
+                style="@style/EditTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Registered plate number"
+                android:inputType="text" />
+
+            <Space style="@style/SpaceMini" />
+
+            <EditText
+                android:id="@+id/et_chasis_number"
+                style="@style/EditTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Chasis Number"
+                android:inputType="text" />
+
+            <Space style="@style/SpaceMini" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_car_name"
+                    style="@style/EditTextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:hint="@string/car_name"
+                    android:inputType="text" />
+                <!--<com.isapanah.awesomespinner.AwesomeSpinner
+                    android:id="@+id/spinner_car_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/app_theme_color"
+                    android:minWidth="@dimen/min_spinner_width"
+                    android:minHeight="@dimen/min_spinner_height"
+                    app:spinnerDirection="ltr"
+                    app:spinnerHint="@string/car_name" />
+-->
+                <Space
+                    style="@style/SpaceMiniOverride"
+                    android:layout_width="@dimen/activity_horizontal_margin" />
+
+                <EditText
+                    android:id="@+id/et_car_model"
+                    style="@style/EditTextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:hint="@string/model"
+                    android:inputType="text" />
+                <!--<com.isapanah.awesomespinner.AwesomeSpinner
+                    android:id="@+id/spinnerCarModel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/app_theme_color"
+                    android:minWidth="@dimen/min_spinner_width"
+                    android:minHeight="@dimen/min_spinner_height"
+                    app:spinnerDirection="ltr"
+                    app:spinnerHint="@string/model" />-->
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_veh_color"
+                    style="@style/EditTextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/vehicle_color"
+                    android:inputType="text" />
+
+                <Space
+                    style="@style/SpaceMiniOverride"
+                    android:layout_width="@dimen/activity_horizontal_margin" />
+
+                <!--<EditText
+                android:id="@+id/et_veh_brand"
+                style="@style/EditTextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/vehicle_brand"
+                android:inputType="text" />-->
+
+                <EditText
+                    android:id="@+id/et_car_year"
+                    style="@style/EditTextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="@string/model_year"
+                    android:inputType="text" />
+                <!--<com.isapanah.awesomespinner.AwesomeSpinner
+                    android:id="@+id/spinnerYear"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/app_theme_color"
+                    android:minWidth="@dimen/min_spinner_width"
+                    android:minHeight="@dimen/min_spinner_height"
+                    app:spinnerDirection="ltr"
+                    app:spinnerHint="@string/year" />-->
+
+            </LinearLayout>
+
+
+            <Space style="@style/SpaceMiniTrim" />
+
+
+            <Space style="@style/SpaceMiniTrim" />
+
+            <!--<EditText
+            android:id="@+id/et_veh_model"
+            style="@style/EditTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/vehicle_model"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/et_veh_year"
+            style="@style/EditTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/model_year"
+            android:inputType="number" />-->
+
+            <Space style="@style/SpaceMiniTrim" />
+
+            <LinearLayout
+                android:id="@+id/container_vehicle_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextView.White.Small"
+                    android:text="@string/does_it_have_a_func" />
+
+                <RadioGroup
+                    android:id="@+id/rg_have_ac"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_yes"
+                        style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@android:color/black"
+                        android:text="@string/yes"
+                        android:textColor="@android:color/black" />
+
+                    <RadioButton
+                        android:id="@+id/rb_no"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@android:color/black"
+                        android:checked="true"
+                        android:text="@string/no"
+                        android:textColor="@android:color/black" />
+                </RadioGroup>
+
+                <Space style="@style/SpaceMiniTrim" />
+
+                <EditText
+                    android:id="@+id/et_reason_no_ac"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_box_background"
+                    android:hint="@string/please_state_any_reason"
+                    android:inputType="text"
+                    android:minHeight="@dimen/edit_text_detail_height"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+
+
+            <Space style="@style/SpaceMiniTrim" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vehicle_pictures"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <Space style="@style/SpaceMiniTrim" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/container_front_image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_margin_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_view_no_background_border"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_front_image"
+                        style="@style/TextView.White.Small"
+                        android:layout_width="wrap_content"
+                        android:drawableStart="@drawable/ic_camera"
+                        android:drawablePadding="@dimen/activity_margin_10"
+                        android:gravity="center"
+                        android:text="@string/front"
+                        android:textColor="@android:color/black"
+                        android:textColorLink="#FFFFFF" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_front_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_checked"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_back_image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_view_no_background_border"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_back_image"
+                        style="@style/TextView.White.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_camera"
+                        android:drawablePadding="@dimen/activity_margin_10"
+                        android:gravity="center"
+                        android:text="@string/rear"
+                        android:textColor="@android:color/black" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_back_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_checked"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                </LinearLayout>
+
+                <!--<LinearLayout
+                android:id="@+id/container_front_image"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/text_view_no_background_border"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_add_front_image"
+                    style="@style/TextView.White.Small"
+                    android:text="@string/add_front_image"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/iv_front_image"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_checked"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <Space
+                style="@style/SpaceMiniTrim"
+                android:layout_width="@dimen/activity_horizontal_margin" />
+
+            <LinearLayout
+                android:id="@+id/container_back_image"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/text_view_no_background_border"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_back_image"
+                    style="@style/TextView.White.Small"
+                    android:text="@string/add_back_image" />
+
+                <ImageView
+                    android:id="@+id/iv_back_image"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_plus_white"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+
+-->
+            </LinearLayout>
+
+            <Space style="@style/SpaceMini" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/container_left_image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_margin_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_view_no_background_border"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_left_image"
+                        style="@style/TextView.White.Small"
+                        android:layout_width="wrap_content"
+                        android:drawableStart="@drawable/ic_camera"
+                        android:drawablePadding="@dimen/activity_margin_10"
+                        android:gravity="center"
+                        android:text="Left"
+                        android:textColor="@android:color/black"
+                        android:textColorLink="#FFFFFF" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_side_left_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_checked"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_right_image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_view_no_background_border"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_right_image"
+                        style="@style/TextView.White.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_camera"
+                        android:drawablePadding="@dimen/activity_margin_10"
+                        android:gravity="center"
+                        android:text="Right"
+                        android:textColor="@android:color/black" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_side_right_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_checked"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <Space style="@style/SpaceMini" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/container_interior_front_image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_margin_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_view_no_background_border"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_interior_front"
+                        style="@style/TextView.White.Small"
+                        android:layout_width="wrap_content"
+                        android:drawableStart="@drawable/ic_camera"
+                        android:drawablePadding="@dimen/activity_margin_10"
+                        android:gravity="center"
+                        android:maxLines="2"
+                        android:text="@string/interior_front"
+                        android:textColor="@android:color/black"
+                        android:textColorLink="#FFFFFF" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_interior_front"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_checked"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_interior_back_image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_view_no_background_border"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_interior_back"
+                        style="@style/TextView.White.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_camera"
+                        android:drawablePadding="@dimen/activity_margin_10"
+                        android:gravity="center"
+                        android:text="@string/interior_back"
+                        android:textColor="@android:color/black" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_interior_back"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_checked"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <Space style="@style/SpaceMini" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/container_engine_image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_margin_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_view_no_background_border"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_engine_image"
+                        style="@style/TextView.White.Small"
+                        android:layout_width="wrap_content"
+                        android:drawableStart="@drawable/ic_camera"
+                        android:drawablePadding="@dimen/activity_margin_10"
+                        android:gravity="center"
+                        android:text="Engine"
+                        android:textColor="@android:color/black"
+                        android:textColorLink="#FFFFFF" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_engine_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_checked"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_boot_image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_view_no_background_border"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_boot_image"
+                        style="@style/TextView.White.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_camera"
+                        android:drawablePadding="@dimen/activity_margin_10"
+                        android:gravity="center"
+                        android:text="Boot"
+                        android:textColor="@android:color/black" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_side_boot_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_checked"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                </LinearLayout>
+
+                <!-- <LinearLayout
+                android:id="@+id/container_engine_image"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/text_view_no_background_border"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_engine_image"
+                    style="@style/TextView.White.Small"
+                    android:text="@string/engine" />
+
+                <ImageView
+                    android:id="@+id/iv_engine_image"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_plus_white"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <Space
+                style="@style/SpaceMiniTrim"
+                android:layout_width="@dimen/activity_horizontal_margin" />
+
+            <LinearLayout
+                android:id="@+id/container_boot_image"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/text_view_no_background_border"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_boot_image"
+                    style="@style/TextView.White.Small"
+                    android:text="@string/boot" />
+
+                <ImageView
+                    android:id="@+id/iv_boot_image"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_plus_white"
+                    android:visibility="gone" />
+            </LinearLayout>
+-->
+
+            </LinearLayout>
+
+
+            <Space style="@style/SpaceMiniOverride" />
+
+        </LinearLayout>
+
+    </ScrollView>
+    <Button
+        android:id="@+id/btStartRide"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_above="@+id/have_an_account"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/round_corner_button"
+        android:minWidth="@dimen/min_button_width"
+        android:text="Continue"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="@id/guideline_main_right"
+        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.84" />
+
+
+    <Button
+        android:id="@+id/btCancelRide"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/round_corner_button_unfilled"
+        android:minWidth="@dimen/min_button_width"
+        android:text="Back"
+        app:layout_constraintStart_toEndOf="@id/guideline_main_left"
+        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

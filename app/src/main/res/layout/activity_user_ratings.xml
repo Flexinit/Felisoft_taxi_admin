@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.UserRatings">
+
+    <include layout="@layout/app_toolbar_user_ratings" />
+
+    <RelativeLayout
+        android:id="@+id/rel_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp">
+
+        <TextView
+            android:id="@+id/tv_Trip_His_Time"
+            style="@style/TextView_style_d"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/_3_april_2019_5_20_am" />
+
+        <TextView
+            android:id="@+id/tvRatinBy"
+            style="@style/TextView_style_d"
+            android:layout_below="@id/tv_Trip_His_Time"
+            android:layout_margin="15dp"
+            android:text="@string/rating_by" />
+
+        <TextView
+            android:id="@+id/tvNameValue"
+            style="@style/TextView_style_d"
+            android:layout_below="@id/tv_Trip_His_Time"
+            android:layout_margin="15dp"
+            android:layout_toEndOf="@+id/tvRatinBy"
+            android:text="@string/jhon_smith"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvRatinBy"
+            android:layout_marginStart="15dp"
+            android:text="@string/message"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvMessageValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvRatinBy"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/tvMessage"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="xxxxx" />
+
+
+        <RatingBar
+            android:id="@+id/rate_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_below="@id/tvMessageValue"
+            android:layout_margin="15dp"
+            android:theme="@style/RatingBar" />
+
+        <TextView
+            android:id="@+id/tvRating"
+            style="@style/TextView_style_d"
+            android:layout_below="@id/tvMessageValue"
+            android:layout_marginTop="25dp"
+            android:layout_toEndOf="@+id/rate_bar"
+            tools:text="(5.0)" />
+
+        <TextView
+            android:id="@+id/tvBillAmount"
+            style="@style/TextView_style_d"
+            android:layout_below="@id/rate_bar"
+            android:layout_marginStart="15dp"
+            android:text="@string/amount_paid" />
+
+        <TextView
+            style="@style/TextView_style_d"
+            android:layout_below="@id/rate_bar"
+            android:layout_toEndOf="@id/tvBillAmount"
+            android:text="@string/_5_12"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_not_rated"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center_horizontal"
+        android:text="@string/user_not_rated_yet"
+        android:textSize="25sp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-7dp"
+        android:src="@drawable/african_graphic2"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/pb"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+</RelativeLayout>

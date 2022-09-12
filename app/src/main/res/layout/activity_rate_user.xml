@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.RateUserActivity">
+
+    <include layout="@layout/app_toolbar" />
+
+    <TextView
+        style="@style/TextView.Black.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="@string/share_your_experience"
+        android:textColor="@color/colorBlack"
+        android:translationY="50dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/rel1"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginEnd="@dimen/margin_large"
+            android:background="@drawable/box_background">
+
+            <TextView
+                android:id="@+id/tv_rider_name"
+                style="@style/TextView.Black.Medium"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:focusable="true"
+                tools:text="@string/how_was_your_ride" />
+
+            <RatingBar
+                android:id="@+id/rate_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_rider_name"
+                android:layout_centerHorizontal="true"
+                android:rating="4"
+                android:stepSize="1"
+                android:theme="@style/RatingBar" />
+
+            <EditText
+                android:id="@+id/etDriverMessage"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="8dp"
+                android:background="@color/light_grey"
+                android:gravity="top"
+                android:hint="@string/write_your_comments"
+                android:padding="4dp" />
+
+        </RelativeLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_account"
+            android:translationY="-30dp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rel1"
+            android:layout_marginTop="45dp">
+
+            <Button
+                android:id="@+id/btnSubmit"
+                style="@style/Black_Button"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:text="@string/submit" />
+
+            <Button
+                android:id="@+id/btSkip"
+                style="@style/Black_Button"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_corner_button_grey"
+                android:text="@string/skip" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

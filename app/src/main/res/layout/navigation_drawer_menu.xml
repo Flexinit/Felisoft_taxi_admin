@@ -1,0 +1,76 @@
+<com.google.android.material.navigation.NavigationView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_view"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:fitsSystemWindows="true"
+    android:maxWidth="@dimen/nav_menu_width">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/header_navbar"
+            layout="@layout/nav_header_ride_new"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view_separator"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/colorRedBright"
+            android:backgroundTint="@color/colorRedBright"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header_navbar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle_toolbar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/app_theme_color"
+            app:layout_constraintBottom_toTopOf="@id/nav_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_separator" />
+
+        <!--<TextView-->
+        <!--android:id="@+id/nav_TnC"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/pure_white"-->
+        <!--android:paddingStart="30dp"-->
+        <!--android:paddingLeft="30dp"-->
+        <!--android:paddingEnd="30dp"-->
+        <!--android:paddingRight="30dp"-->
+        <!--android:paddingBottom="10dp"-->
+        <!--android:text="@string/_terms_and_condition"-->
+        <!--android:textSize="16sp"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/recycle_toolbar" />-->
+
+
+        <ImageView
+            android:id="@+id/nav_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:background="@color/pure_white"
+            android:scaleType="centerCrop"
+            android:src="@drawable/app_bar_background"
+            app:layout_constraintTop_toBottomOf="@id/guideline_drawer_menu_bottom"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_drawer_menu_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="608dp"
+            app:layout_constraintGuide_percent="0.97" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.navigation.NavigationView>

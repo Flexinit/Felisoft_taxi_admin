@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite">
+
+    <RelativeLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30dp">
+        <TextView
+            style="@style/TextView_style_d"
+            android:id="@+id/tvGettingBored"
+            android:text="@string/recieved_a_ride"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            style="@style/TextView_style_d"
+            android:text="@string/source"
+            android:textSize="22dp"
+            android:textAlignment="center"
+            android:layout_below="@id/tvRiderName"
+            android:layout_alignParentStart="true"
+            android:textStyle="bold"
+            android:id="@+id/tvSourceCity"
+            />
+
+        <TextView
+            style="@style/TextView_style_d"
+            android:text="to"
+            android:textSize="22dp"
+            android:textAlignment="center"
+            android:layout_below="@id/tvSourceCity"
+            android:id="@+id/tvTo"
+            android:textColor="@color/grey"
+            />
+
+
+        <TextView
+            style="@style/TextView_style_d"
+            android:text="@string/destination"
+            android:textSize="22dp"
+            android:textAlignment="center"
+            android:layout_below="@id/tvTo"
+            android:id="@+id/tv_rider_destination"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            style="@style/TextView_style_d"
+            android:text="@string/jhon_smith"
+            android:textSize="22dp"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/tvGettingBored"
+            android:layout_marginEnd="30dp"
+            android:id="@+id/tvRiderName"
+            />
+
+        <TextView
+            style="@style/TextView_style_d"
+            android:text="Want to accept the ride"
+            android:textSize="22dp"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:layout_below="@id/tv_rider_destination"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/tvIncKnow"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvIncKnow"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:text="@string/yes"
+                android:layout_margin="10dp"
+                android:id="@+id/btYes"
+                android:background="@color/colorBlack"
+                android:textColor="@color/pure_white"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:text="@string/no"
+                android:id="@+id/btNo"
+                android:layout_margin="10dp"
+                android:background="@color/grey"
+                android:textColor="@color/pure_white"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

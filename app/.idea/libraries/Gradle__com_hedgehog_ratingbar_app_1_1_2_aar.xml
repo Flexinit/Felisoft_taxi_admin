@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.hedgehog.ratingbar:app:1.1.2@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/906a51daf65fd5c28b9d0f046160c063/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/906a51daf65fd5c28b9d0f046160c063/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/906a51daf65fd5c28b9d0f046160c063/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hedgehog.ratingbar/app/1.1.2/aa7529f2a9ec50ed3f4f7a54225a1e46557f4bb8/app-1.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

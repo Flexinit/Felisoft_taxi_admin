@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.jakewharton.rxbinding3:rxbinding-drawerlayout:3.0.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9170bae97ef2602fa9283a15a2d1b57d/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9170bae97ef2602fa9283a15a2d1b57d/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9170bae97ef2602fa9283a15a2d1b57d/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton.rxbinding3/rxbinding-drawerlayout/3.0.0/6f1bb36da9444c8742946b5da7d52788dee0710d/rxbinding-drawerlayout-3.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

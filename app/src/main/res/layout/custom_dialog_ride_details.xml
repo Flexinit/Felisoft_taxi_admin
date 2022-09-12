@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="8dp">
+
+    <TextView
+        android:id="@+id/tv_ride_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/ride_details"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tv_status"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_status" />
+
+    <Button
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@color/app_theme_color"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:text="@string/scheduled"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/vi_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/divider"
+        app:layout_constraintTop_toBottomOf="@id/tv_status" />
+
+    <LinearLayout
+        android:id="@+id/ll_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="18dp"
+        android:background="@drawable/round_corner_white"
+        android:gravity="start"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintStart_toStartOf="@id/cl_destination"
+        app:layout_constraintTop_toBottomOf="@id/vi_divider">
+
+        <ImageView
+            android:id="@+id/iv_date"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_calendar" />
+
+        <TextView
+            android:id="@+id/tv_Trip_His_Time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="6dp"
+            android:text=""
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/round_corner_white"
+        android:gravity="start"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintEnd_toEndOf="@id/cl_destination"
+        app:layout_constraintTop_toBottomOf="@id/vi_divider">
+
+        <ImageView
+            android:id="@+id/iv_time"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_time" />
+
+        <TextView
+            android:id="@+id/tvTimeValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="6dp"
+            android:text=""
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_destination"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="36dp"
+        android:background="@drawable/box_background"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_date">
+
+        <ImageView
+            android:id="@+id/iv_pin"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_start_location"
+            app:layout_constraintBottom_toTopOf="@id/vi_inner_divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSourceCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text=""
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_pin"
+            app:layout_constraintStart_toEndOf="@id/iv_pin"
+            app:layout_constraintTop_toTopOf="@id/iv_pin" />
+
+        <View
+            android:id="@+id/vi_inner_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/divider"
+            app:layout_constraintTop_toBottomOf="@id/tvSourceCity" />
+
+        <ImageView
+            android:id="@+id/iv_arrow"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_destination"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vi_inner_divider" />
+
+        <TextView
+            android:id="@+id/tvDestinationCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text=""
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_arrow"
+            app:layout_constraintStart_toEndOf="@id/iv_arrow"
+            app:layout_constraintTop_toTopOf="@id/iv_arrow" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_fare_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/yellow"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintEnd_toStartOf="@id/ll_payment"
+        app:layout_constraintStart_toStartOf="@id/cl_destination"
+        app:layout_constraintTop_toBottomOf="@id/cl_destination">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Fare Amount"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_fare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_payment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/yellow"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ll_fare_amount"
+        app:layout_constraintEnd_toEndOf="@id/cl_destination"
+        app:layout_constraintStart_toEndOf="@id/ll_fare_amount"
+        app:layout_constraintTop_toBottomOf="@id/cl_destination">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Payment by:"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_payment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Cash"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_driver_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Driver Details"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/tv_ride_details"
+        app:layout_constraintTop_toBottomOf="@id/ll_fare_amount" />
+
+
+
+    <View
+        android:id="@+id/vi_divider_2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/divider"
+        app:layout_constraintTop_toBottomOf="@id/tv_driver_details" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_driver_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/ic_profile"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/tv_ride_details"
+        app:layout_constraintTop_toBottomOf="@id/vi_divider_2" />
+
+    <TextView
+        android:id="@+id/tv_driver_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Isaiah Obasi"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@id/iv_driver_image"
+        app:layout_constraintTop_toTopOf="@id/iv_driver_image" />
+
+    <com.willy.ratingbar.ScaleRatingBar
+        android:id="@+id/rate_bar"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/tv_driver_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_driver_name"
+        app:srb_clickable="false"
+        app:srb_drawableEmpty="@drawable/ic_star_border"
+        app:srb_drawableFilled="@drawable/ic_star_full"
+        app:srb_isIndicator="false"
+        app:srb_minimumStars="0"
+        app:srb_numStars="5"
+        app:srb_starHeight="20dp"
+        app:srb_starPadding="1dp"
+        app:srb_starWidth="20dp"
+        app:srb_stepSize="0.5" />
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/ll_driver_rate"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="8dp"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/tv_driver_name"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/tv_driver_name">-->
+
+    <!--        <ImageView-->
+    <!--            android:layout_width="22dp"-->
+    <!--            android:layout_height="22dp"-->
+    <!--            android:src="@drawable/ic_star_border" />-->
+
+    <!--        <ImageView-->
+    <!--            android:layout_width="22dp"-->
+    <!--            android:layout_height="22dp"-->
+    <!--            android:src="@drawable/ic_star_border" />-->
+
+    <!--        <ImageView-->
+    <!--            android:layout_width="22dp"-->
+    <!--            android:layout_height="22dp"-->
+    <!--            android:src="@drawable/ic_star_border" />-->
+
+    <!--        <ImageView-->
+    <!--            android:layout_width="22dp"-->
+    <!--            android:layout_height="22dp"-->
+    <!--            android:src="@drawable/ic_star_border" />-->
+
+    <!--        <ImageView-->
+    <!--            android:layout_width="22dp"-->
+    <!--            android:layout_height="22dp"-->
+    <!--            android:src="@drawable/ic_star_border" />-->
+    <!--    </LinearLayout>-->
+
+    <TextView
+        android:id="@+id/tv_reviews_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="54 Reviews"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/rate_bar"
+        app:layout_constraintStart_toEndOf="@id/rate_bar"
+        app:layout_constraintTop_toTopOf="@id/rate_bar" />
+
+    <TextView
+        android:id="@+id/tv_car_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Toyota Camry - Black - "
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/rate_bar"
+        app:layout_constraintTop_toBottomOf="@id/rate_bar" />
+
+    <TextView
+        android:id="@+id/tv_car_plate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HV546LND"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/tv_car_details"
+        app:layout_constraintStart_toEndOf="@id/tv_car_details"
+        app:layout_constraintTop_toTopOf="@id/tv_car_details" />
+
+    <TextView
+        android:id="@+id/tv_ride_not_yet_accepted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Ride not accepted by any driver yet"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/ll_fare_amount"
+        app:layout_constraintTop_toBottomOf="@+id/vi_divider_2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

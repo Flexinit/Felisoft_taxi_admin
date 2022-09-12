@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite">
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30dp">
+
+        <TextView
+            android:id="@+id/tvNewRide"
+            style="@style/TextView_style_d"
+            android:layout_centerHorizontal="true"
+            android:text="New Ride"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvSource"
+            style="@style/TextView_style_d"
+            android:layout_below="@+id/tvNewRide"
+            android:text="From" />
+
+        <TextView
+            android:id="@id/tv_rider_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvNewRide"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/tvDate"
+            android:text="@string/indore"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            android:id="@+id/tvDestination"
+            style="@style/TextView_style_d"
+            android:layout_below="@id/tv_rider_source"
+            android:layout_marginTop="5dp"
+            android:text="To" />
+
+        <TextView
+            android:id="@id/tvDestination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_rider_source"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/tvDate"
+            android:text="Dewas"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            android:id="@+id/tvRider"
+            style="@style/TextView_style_d"
+            android:layout_below="@id/tvDestination"
+            android:layout_marginTop="5dp"
+            android:text="Rider:" />
+
+        <TextView
+            android:id="@+id/tv_rider_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDestination"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/tvDate"
+            android:text="Rider Name"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            style="@style/TextView_style_d"
+            android:layout_below="@id/tv_rider_name"
+            android:layout_marginTop="5dp"
+            android:text="@string/date" />
+
+        <TextView
+            android:id="@+id/tv_date_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_rider_name"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/tvDate"
+            android:text="24 Jul 2019 03:54 PM"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            android:id="@+id/tvBudget"
+            style="@style/TextView_style_d"
+            android:layout_below="@id/tvDate"
+            android:layout_marginTop="5dp"
+            android:text="Budget"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvBudgetValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDateValue"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/tvBudget"
+            android:text="$5"
+            android:textColor="@color/colorBlack"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvBudget"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btStartRide"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_corner_button_black"
+                android:text="@string/accept_ride"
+                android:textColor="@color/pure_white" />
+
+            <Button
+                android:id="@+id/btn_reject"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_corner_button_grey"
+                android:text="@string/reject_ride"
+                android:textColor="@color/pure_white" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

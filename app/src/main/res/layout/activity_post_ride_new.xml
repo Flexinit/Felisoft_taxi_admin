@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:focusableInTouchMode="true"
+    tools:context=".ui.PostRideActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_toolbar_post_ride" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/sign_container"
+        android:layout_below="@id/toolbar"
+        android:paddingBottom="@dimen/padding_medium">
+
+        <RelativeLayout
+            android:id="@+id/par_lin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/pure_white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_large"
+                    android:layout_marginTop="@dimen/margin_x_large"
+                    android:layout_marginEnd="@dimen/margin_large"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="4dp"
+                    app:strokeColor="@color/grey_shade"
+                    app:strokeWidth="0.5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:minHeight="40dp"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="4dp"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="4dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:paddingTop="6dp"
+                                android:paddingBottom="6dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_position" />
+
+                            <Space
+                                style="@style/SpaceMiniTrim"
+                                android:layout_width="10dp" />
+
+                            <EditText
+                                android:id="@+id/et_source"
+                                style="@style/TextView.Black.Small"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@android:color/transparent"
+                                android:drawableEnd="@drawable/ic_close"
+                                android:drawablePadding="10dp"
+                                android:focusableInTouchMode="true"
+                                android:hint="@string/pick_up_location"
+                                android:imeOptions="actionDone"
+                                android:singleLine="true"
+                                android:textColorHint="@android:color/black" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.7dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="2dp"
+                            android:background="@color/grey_shade" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:minHeight="40dp"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_pointer_red" />
+
+                            <Space
+                                style="@style/SpaceMiniTrim"
+                                android:layout_width="10dp" />
+
+                            <EditText
+                                android:id="@+id/et_destination"
+                                style="@style/TextView.Black.Small"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@android:color/transparent"
+                                android:drawableEnd="@drawable/ic_close"
+                                android:drawablePadding="10dp"
+                                android:drawableTint="@android:color/black"
+                                android:focusableInTouchMode="true"
+                                android:hint="@string/destination"
+                                android:imeOptions="actionDone"
+                                android:singleLine="true"
+                                android:textColorHint="@android:color/black" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_large"
+                    android:layout_marginTop="@dimen/margin_x_large"
+                    android:layout_marginEnd="@dimen/margin_large"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="4dp"
+                    app:strokeColor="@color/grey_shade"
+                    app:strokeWidth="0.5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="12dp"
+                            android:text="@string/choose_ride_type" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.7dp"
+                            android:background="@color/grey_shade" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/container_single_ride"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginStart="4dp"
+                                android:background="@drawable/background_state_with_red"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_gravity="center"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/image_chevloret" />
+
+                                <TextView
+                                    android:id="@+id/tv_single_ride"
+                                    style="@style/TextView.Black.Small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="@string/single_ride" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/container_pool_ride"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginEnd="4dp"
+                                android:background="@drawable/background_state_with_red"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_gravity="center"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/image_wagon" />
+
+                                <TextView
+                                    android:id="@+id/tv_pool_ride"
+                                    style="@style/TextView.Black.Small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="@string/pool_ride" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <EditText
+                    android:id="@+id/tvFare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_large"
+                    android:layout_marginTop="@dimen/margin_x_large"
+                    android:layout_marginEnd="@dimen/margin_large"
+                    android:background="@drawable/container_with_border_white"
+                    android:hint="@string/fare"
+                    android:inputType="number" />
+
+                <LinearLayout
+                    android:id="@+id/lin_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:visibility="visible">
+
+                    <TextView
+                        style="@style/TextView_style_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_margin="16dp"
+                        android:visibility="gone"
+                        android:layout_gravity="center"
+                        android:text="@string/number_of_people_you_want_to_ride_with"
+                        android:textSize="17sp" />
+
+
+                </LinearLayout>
+
+                <com.victor.loading.rotate.RotateLoading
+                    android:id="@+id/pb_rl"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    app:loading_color="@color/colorRed"
+                    app:loading_width="8dp" />
+
+                <LinearLayout
+                    android:id="@+id/lin_rider_counter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/ivSubtract"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_minus" />
+
+                    <TextView
+                        android:id="@+id/tvTotalRiders"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:gravity="center"
+                        android:text="@string/num_3"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="30sp" />
+
+                    <ImageView
+                        android:id="@+id/ivAdd"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_plus" />
+                </LinearLayout>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_large"
+                    android:layout_marginTop="@dimen/margin_x_large"
+                    android:layout_marginEnd="@dimen/margin_large"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="4dp"
+                    app:strokeColor="@color/grey_shade"
+                    app:strokeWidth="0.5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="12dp"
+                            android:text="@string/set_date_and_time" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.7dp"
+                            android:background="@color/grey_shade" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginBottom="12dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardDateSelector"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:layout_weight="1"
+                                android:clickable="true"
+                                android:focusable="true"
+                                app:cardBackgroundColor="@color/color_green_shade_selector"
+                                app:cardCornerRadius="4dp"
+                                app:cardElevation="0dp"
+                                app:contentPadding="12dp"
+                                app:strokeColor="@color/light_grey"
+                                app:strokeWidth="0.5dp">
+
+                                <TextView
+                                    android:id="@+id/tvDate"
+
+                                    style="@style/TextView.Black.Medium"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:drawableStart="@drawable/ic_baseline_date_range_24"
+                                    android:drawablePadding="10dp"
+                                    android:gravity="center"
+                                    android:text="23 April, 2020"
+                                    app:drawableTint="@android:color/black" />
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardTimeSelector"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:layout_weight="1"
+                                android:clickable="true"
+                                android:focusable="true"
+                                app:cardBackgroundColor="@color/color_green_shade_selector"
+                                app:cardCornerRadius="4dp"
+                                app:cardElevation="0dp"
+                                app:contentPadding="12dp"
+                                app:strokeColor="@color/light_grey"
+                                app:strokeWidth="0.5dp">
+
+                                <TextView
+                                    android:id="@+id/tvTime"
+
+                                    style="@style/TextView.Black.Medium"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:drawableStart="@drawable/ic_baseline_access_time_24"
+                                    android:drawablePadding="10dp"
+                                    android:gravity="center"
+                                    android:text="10:00 AM"
+                                    app:drawableTint="@android:color/black" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/lin_c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/tvWith"
+                                style="@style/TextView_style_d"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/with_three_person" />
+
+                            <TextView
+                                android:id="@+id/tvWithValue"
+                                style="@style/TextView_style_d"
+                                android:text="@string/currency_3" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <Button
+                    android:id="@+id/post_ride"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/round_corner_button"
+                    android:text="@string/schedule_ride"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/sign_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_bar_pattern"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/powered_by_drupp"
+            android:layout_width="96dp"
+            android:layout_height="48dp"
+            android:src="@drawable/car_map_drawable" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/bottom_bar_pattern"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorBlack">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:adjustViewBounds="true"
+            android:alpha="0.75"
+            android:scaleType="centerCrop"
+            android:src="@drawable/app_bar_background" />
+
+    </FrameLayout>
+
+</RelativeLayout>

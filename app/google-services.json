@@ -1,0 +1,139 @@
+{
+  "project_info": {
+    "project_number": "666604725649",
+    "firebase_url": "https://drupp-c0154.firebaseio.com",
+    "project_id": "drupp-c0154",
+    "storage_bucket": "drupp-c0154.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666604725649:android:bc79966331af9ed0ed2630",
+        "android_client_info": {
+          "package_name": "com.example.drupp_driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "666604725649-9i9gsear0qkupiothqlma15j7ia8ecln.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.drupp_driver",
+            "certificate_hash": "345ef6d528f2d570ec32aa73310a155d4e9de458"
+          }
+        },
+        {
+          "client_id": "666604725649-er1k27l8d2ntg74cv6cqdkq3pei9g4ns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9dTj72A3Gb8_dILIvdoOGbh1u3bWwsx0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "666604725649-er1k27l8d2ntg74cv6cqdkq3pei9g4ns.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "666604725649-18fi1ie9r7verdhqqn59pkkg1tneupkb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.drupp.user"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666604725649:android:5dacd8b1b62730d1ed2630",
+        "android_client_info": {
+          "package_name": "com.quawlebs.drupp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "666604725649-44pk1b0l40kim1m5l7dgfmvghuh010i0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.quawlebs.drupp",
+            "certificate_hash": "c634023cbd7ba44f89e86ecba25cfa1913ba80d0"
+          }
+        },
+        {
+          "client_id": "666604725649-tpavtifrpm0naljqe6d3toh1ksnassb1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.quawlebs.drupp",
+            "certificate_hash": "2308074c1bd5fd95a13ed2d0c38aba7bad84c26d"
+          }
+        },
+        {
+          "client_id": "666604725649-kaq7chpndmg7dq7lmn91puctmdkfhs8d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.quawlebs.drupp",
+            "certificate_hash": "22ad693521df34415517b3b16f5101d0eda869e1"
+          }
+        },
+        {
+          "client_id": "666604725649-ccb8eibpfj82gvs6pqg2ih9b12td8sp1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.quawlebs.drupp",
+            "certificate_hash": "57e8adb3ae0fcb7cd990286fd1d5590b64ea88f7"
+          }
+        },
+        {
+          "client_id": "666604725649-odskdnk6h2i2hd1eidbu9c2emf6d3mp5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.quawlebs.drupp",
+            "certificate_hash": "5133aa997a3e07a0122471ad2d00830a13d6837d"
+          }
+        },
+        {
+          "client_id": "666604725649-u845qbhsiha8cv0gldh4v1o5bc1ljb9g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.quawlebs.drupp",
+            "certificate_hash": "b1c5ff3fad3784733a9868ccf840b00e5c0139cd"
+          }
+        },
+        {
+          "client_id": "666604725649-er1k27l8d2ntg74cv6cqdkq3pei9g4ns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9dTj72A3Gb8_dILIvdoOGbh1u3bWwsx0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "666604725649-er1k27l8d2ntg74cv6cqdkq3pei9g4ns.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "666604725649-18fi1ie9r7verdhqqn59pkkg1tneupkb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.drupp.user"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

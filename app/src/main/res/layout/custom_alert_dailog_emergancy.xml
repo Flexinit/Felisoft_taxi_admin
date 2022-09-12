@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhite">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="25dp">
+
+        <TextView
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btOk"
+            android:id="@+id/txt"
+            style="@style/TextView_style_d"
+            android:text="@string/alrt_emergency"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"
+            android:gravity="center"/>
+        <Button
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="ok"
+            android:layout_margin="10dp"
+            android:id="@+id/btOk"
+            android:background="@drawable/round_corner_button_black"
+            android:textColor="@color/pure_white"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

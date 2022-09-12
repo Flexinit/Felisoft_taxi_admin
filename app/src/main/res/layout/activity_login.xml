@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_pattern_first">
+
+    <RelativeLayout
+        android:layout_margin="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#C4000000"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/drupp_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:id="@+id/im_logo"/>
+
+        <TextView
+            style="@style/TextView_style_a"
+            android:id="@+id/tvLogin"
+            android:layout_below="@id/im_logo"
+            android:layout_marginTop="25dp"
+            android:text="Login"
+            android:textSize="25sp"/>
+
+        <EditText
+            style="@style/TextView_style_Email"
+            android:layout_below="@id/tvLogin"
+            android:id="@+id/etLogin"
+            android:layout_marginTop="150dp"/>
+
+        <EditText
+            style="@style/TextView_style_Password"
+            android:layout_below="@id/etLogin"
+            android:id="@+id/etEmail"
+            />
+
+        <TextView
+            style="@style/TextView_style_a"
+            android:id="@+id/tvForgotPasword"
+            android:layout_below="@id/etEmail"
+            android:text="Forgot Password..."
+            android:textSize="15sp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="25dp"/>
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:id="@+id/btLogin"
+            android:layout_below="@id/tvForgotPasword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/round_corner_button"
+            android:text="Login"/>
+
+        <TextView
+            style="@style/TextView_style_a"
+            android:id="@+id/tvNoAccount"
+            android:layout_below="@id/btLogin"
+            android:text="Dont have a account?"
+            android:textSize="15sp"
+            android:layout_centerHorizontal="false"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="82dp"/>
+
+        <TextView
+            style="@style/TextView_style_a"
+            android:id="@+id/tvSignUp"
+            android:layout_below="@id/btLogin"
+            android:layout_toRightOf="@id/tvNoAccount"
+            android:text="SignUp"
+            android:textSize="15sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="2dp"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

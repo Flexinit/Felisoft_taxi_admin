@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.TripHistoryFinal">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_toolbar_ride_details" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvDate"
+                style="@style/TextView.Black.Small.Bold"
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:text="@string/date" />
+
+            <TextView
+                android:id="@+id/tvDateValue"
+                style="@style/TextView.Black.Small"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Space style="@style/SpaceMiniTrim" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvTime"
+                style="@style/TextView.Black.Small.Bold"
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:text="@string/_time" />
+
+
+            <TextView
+                android:id="@+id/tvTimeValue"
+                style="@style/TextView.Black.Small"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Space style="@style/SpaceMiniTrim" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvSource"
+                style="@style/TextView.Black.Small.Bold"
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:text="@string/from_" />
+
+            <TextView
+                android:id="@+id/tvSourceCity"
+                style="@style/TextView.Black.Small"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <Space style="@style/SpaceMiniTrim" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvDestination"
+                style="@style/TextView.Black.Small.Bold"
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:text="@string/to_" />
+
+            <TextView
+                android:id="@+id/tv_rider_destination"
+                style="@style/TextView.Black.Small"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Space style="@style/SpaceMiniTrim" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvBillAmount"
+                style="@style/TextView.Black.Small.Bold"
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:text="@string/amount_estimated" />
+
+            <TextView
+                android:id="@+id/tv_fare"
+                style="@style/TextView.Black.Small"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Space style="@style/SpaceMiniTrim" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_start_ride"
+        style="@style/Black_Button"
+        android:layout_above="@id/bottom_bar_pattern"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="50dp"
+        android:text="@string/start_ride"
+        android:visibility="visible" />
+
+    <FrameLayout
+        android:id="@+id/bottom_bar_pattern"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorBlack">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:adjustViewBounds="true"
+            android:alpha="0.75"
+            android:scaleType="centerCrop"
+            android:src="@drawable/drupp_pattern_10" />
+
+    </FrameLayout>
+</RelativeLayout>

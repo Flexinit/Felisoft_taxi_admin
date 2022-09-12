@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_margin="15dp"
+    android:gravity="center"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/image_pin"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/pin" />
+
+    <TextView
+        android:id="@+id/tvArrived"
+        style="@style/TextView_style_d"
+        android:layout_below="@id/image_pin"
+        android:layout_centerHorizontal="true"
+        android:text="@string/arrived_at_location"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btStartRide"
+        style="@style/Black_Button"
+        android:layout_height="35dp"
+        android:layout_below="@id/tvArrived"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/start_ride" />
+
+</RelativeLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomTextView">
+        <attr name="showText" format="boolean" />
+        <attr name="labelPosition" format="enum">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+        <attr name="subText" format="string" />
+        <attr name="applyToAll" format="boolean" />
+        <attr name="colorToApply" format="color" />
+        <attr name="styleToApply" format="string" />
+        <attr name="textSizeToApply" format="float" />
+    </declare-styleable>
+    <declare-styleable name="PaymentView">
+        <attr name="pentecostTheme" format="enum">
+            <enum name="black" value="0" />
+            <enum name="white" value="1" />
+        </attr>
+        <attr name="pentecostBackgroundColor" format="reference|color" />
+        <attr name="pentecostBackgroundDrawable" format="reference" />
+        <attr name="pentecostHeaderTitle" format="reference|string" />
+        <attr name="pentecostHeaderBackgroundDrawable" format="reference" />
+
+        <attr name="pentecostHeaderBorderRadius" format="reference|dimension" />
+
+        <attr name="pentecostHeaderBackground" format="enum">
+            <enum name="show" value="0" />
+            <enum name="hide" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>

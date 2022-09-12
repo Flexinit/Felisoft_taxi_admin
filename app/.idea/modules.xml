@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1416371122/Android_rider_bugs.iml" filepath="$PROJECT_DIR$/.idea/modules/1416371122/Android_rider_bugs.iml" group="Android_rider_bugs" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app.iml" group="Android rider bugs/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1754635254/bubbles.iml" filepath="$PROJECT_DIR$/.idea/modules/-1754635254/bubbles.iml" group="Android rider bugs/bubbles" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libs/easylocation/easylocation.iml" filepath="$PROJECT_DIR$/.idea/modules/libs/easylocation/easylocation.iml" group="Android rider bugs/easylocation" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-993398104/lib.iml" filepath="$PROJECT_DIR$/.idea/modules/-993398104/lib.iml" group="Android rider bugs/lib" />
+    </modules>
+  </component>
+</project>

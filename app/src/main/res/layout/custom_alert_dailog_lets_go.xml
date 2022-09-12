@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite">
+
+    <RelativeLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30dp">
+        <TextView
+            style="@style/TextView_style_d"
+            android:id="@+id/tvGettingBored"
+            android:text="Let's Go"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            style="@style/TextView_style_d"
+            android:text="@string/the_driver_has_arrived_at_your_location"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:layout_below="@id/tvGettingBored"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/tvDriveArrived"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDriveArrived"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:text="ok"
+                android:layout_margin="10dp"
+                android:id="@+id/btOk"
+                android:background="@color/colorBlack"
+                android:textColor="@color/pure_white"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:text="@string/cancel_ride"
+                android:id="@+id/btCancelRide"
+                android:layout_margin="10dp"
+                android:background="@color/grey"
+                android:textColor="@color/pure_white"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

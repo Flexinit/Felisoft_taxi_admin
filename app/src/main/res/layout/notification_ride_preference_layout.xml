@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/toolbar_common" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_margin_20"
+        android:showDividers="beginning|middle|end"
+        android:stretchColumns="1,2">
+
+
+        <TableRow android:divider="@drawable/table_divider">
+
+            <TextView
+                android:id="@+id/tvSource"
+                style="@style/TextView_style_d"
+                android:layout_column="1"
+                android:layout_marginStart="@dimen/activity_margin_50"
+                android:padding="5dp"
+                android:text="@string/pick_up_point"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_pick_up"
+                style="@style/TextView_style_d"
+                android:layout_column="2"
+                android:layout_marginStart="@dimen/activity_margin_50"
+                android:maxLines="2"
+                android:padding="5dp"
+                android:textSize="14sp"
+                tools:text="Indore" />
+
+        </TableRow>
+
+
+        <TableRow android:divider="@drawable/table_divider">
+
+            <TextView
+                android:id="@+id/tvNumCoRiders"
+                style="@style/TextView_style_d"
+                android:layout_column="1"
+                android:layout_marginStart="@dimen/activity_margin_50"
+                android:padding="5dp"
+                android:text="@string/riders"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_num_of_riders"
+                style="@style/TextView_style_d"
+                android:layout_column="2"
+                android:layout_marginStart="@dimen/activity_margin_50"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:textSize="14sp"
+                tools:text="3" />
+
+        </TableRow>
+
+
+        <TableRow android:divider="@drawable/table_divider">
+
+            <TextView
+                android:id="@+id/tvDriverType"
+                style="@style/TextView_style_d"
+                android:layout_column="1"
+                android:layout_marginStart="@dimen/activity_margin_50"
+                android:padding="5dp"
+                android:text="@string/trip_type"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_trip_type"
+                style="@style/TextView_style_d"
+                android:layout_column="2"
+                android:layout_marginStart="@dimen/activity_margin_50"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:textSize="14sp"
+                tools:text="Silent" />
+        </TableRow>
+
+
+        <TableRow android:divider="@drawable/table_divider">
+
+            <TextView
+                android:id="@+id/tvMessage"
+                style="@style/TextView_style_d"
+                android:layout_column="1"
+                android:layout_marginStart="@dimen/activity_margin_50"
+                android:padding="5dp"
+                android:text="@string/notes"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_message"
+                style="@style/TextView_style_d"
+                android:layout_column="2"
+                android:layout_marginStart="@dimen/activity_margin_50"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:textSize="14sp"
+                tools:text="Rider's message" />
+        </TableRow>
+
+    </TableLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_corner_button_black"
+            android:text="@string/confirm_ride"
+            android:textColor="@color/pure_white" />
+
+        <Button
+            android:id="@+id/btn_reject"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_corner_button_grey"
+            android:text="@string/reject_ride"
+            android:textColor="@color/pure_white" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:backgroundTint="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/profileToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/image_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_left_chevron"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    style="@style/TextView.White.Big.Bold"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="My Profile"
+                    app:layout_constraintEnd_toStartOf="@+id/driver_status"
+                    app:layout_constraintStart_toStartOf="@+id/image_back"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <!--<ImageView
+                    android:id="@+id/image_Emergency"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/ic_emergency"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_goneMarginEnd="@dimen/activity_margin_10" />-->
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/driver_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:checked="true"
+                    android:textOff="@string/offline"
+                    android:textOn="@string/available"
+                    android:thumb="@drawable/custom_switch_selector_two"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_goneMarginEnd="@dimen/activity_margin_10"
+                    app:track="@drawable/custom_track" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/iv_top"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/app_bar_background"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_layout" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_profile_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="false"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/ic_user_silhouette_black"
+        app:civ_border_color="@color/colorBlack"
+        app:civ_border_width="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_layout" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_camera_white"
+        app:layout_constraintStart_toStartOf="@id/iv_profile_image"
+        app:layout_constraintEnd_toEndOf="@id/iv_profile_image"
+        app:layout_constraintTop_toTopOf="@id/iv_profile_image"
+        app:layout_constraintBottom_toBottomOf="@id/iv_profile_image"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_bar_pattern"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_profile_image"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_inset_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintGuide_percent="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_inset_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintGuide_percent="0.04"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_inset_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintGuide_percent="0.96"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <EditText
+                android:id="@+id/et_first_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:ems="10"
+                android:focusable="false"
+                android:hint="First Name"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_inset_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_inset_left"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/et_last_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Last Name"
+                android:inputType="textPersonName"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_inset_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_inset_left"
+                app:layout_constraintTop_toBottomOf="@+id/et_first_name" />
+
+            <EditText
+                android:id="@+id/et_mobile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:ems="10"
+                android:focusable="false"
+                android:hint="Phone number"
+                android:inputType="numberSigned|number|phone"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_inset_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_inset_left"
+                app:layout_constraintTop_toBottomOf="@+id/et_last_name" />
+
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:ems="10"
+                android:focusable="false"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_inset_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_inset_left"
+                app:layout_constraintTop_toBottomOf="@+id/et_mobile" />
+
+            <EditText
+                android:id="@+id/et_city"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="City"
+                android:inputType="textPersonName"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_inset_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_inset_left"
+                app:layout_constraintTop_toBottomOf="@+id/et_email" />
+
+            <EditText
+                android:id="@+id/et_State"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="State"
+                android:inputType="text"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_inset_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_inset_left"
+                app:layout_constraintTop_toBottomOf="@+id/et_city" />
+
+
+            <EditText
+                android:id="@+id/editTextCarType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Car Type"
+                android:inputType="date"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_inset_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_inset_left"
+                app:layout_constraintTop_toBottomOf="@+id/et_State" />
+
+
+            <EditText
+                android:id="@+id/et_vehicle_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Car Name"
+                android:inputType="textPersonName"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_inset_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_inset_left"
+                app:layout_constraintTop_toBottomOf="@+id/editTextCarType" />
+
+            <TextView
+                android:id="@+id/tv_car_pictures"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Car Pictures"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_inset_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_inset_left"
+                app:layout_constraintTop_toBottomOf="@+id/et_vehicle_name" />
+
+            <ImageView
+                android:id="@+id/iv_front_image"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_image_default"
+                app:layout_constraintEnd_toStartOf="@id/guideline_vertical_one"
+                app:layout_constraintStart_toStartOf="@id/guideline_inset_left"
+                app:layout_constraintTop_toBottomOf="@id/tv_car_pictures" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_camera_white"
+                app:layout_constraintStart_toStartOf="@id/iv_front_image"
+                app:layout_constraintEnd_toEndOf="@id/iv_front_image"
+                app:layout_constraintTop_toTopOf="@id/iv_front_image"
+                app:layout_constraintBottom_toBottomOf="@id/iv_front_image"/>
+
+            <TextView
+                android:id="@+id/tv_car_front"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:scaleType="centerCrop"
+                android:text="Front"
+                app:layout_constraintEnd_toStartOf="@id/guideline_vertical_one"
+                app:layout_constraintStart_toStartOf="@id/guideline_inset_left"
+                app:layout_constraintTop_toBottomOf="@id/iv_front_image" />
+
+            <ImageView
+                android:id="@+id/iv_back_image"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_image_default"
+                app:layout_constraintEnd_toStartOf="@id/guideline_vertical_two"
+                app:layout_constraintStart_toStartOf="@id/guideline_vertical_one"
+                app:layout_constraintTop_toBottomOf="@id/tv_car_pictures" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_camera_white"
+                app:layout_constraintStart_toStartOf="@id/iv_back_image"
+                app:layout_constraintEnd_toEndOf="@id/iv_back_image"
+                app:layout_constraintTop_toTopOf="@id/iv_back_image"
+                app:layout_constraintBottom_toBottomOf="@id/iv_back_image"/>
+            <TextView
+                android:id="@+id/tv_car_back"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:scaleType="centerCrop"
+                android:text="Back"
+                app:layout_constraintEnd_toStartOf="@id/guideline_vertical_two"
+                app:layout_constraintStart_toStartOf="@id/guideline_vertical_one"
+                app:layout_constraintTop_toBottomOf="@id/iv_back_image" />
+
+            <ImageView
+                android:id="@+id/iv_side_left_image"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_image_default"
+                app:layout_constraintEnd_toStartOf="@id/guideline_vertical_three"
+                app:layout_constraintStart_toStartOf="@id/guideline_vertical_two"
+                app:layout_constraintTop_toBottomOf="@id/tv_car_pictures" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_camera_white"
+                app:layout_constraintStart_toStartOf="@id/iv_side_left_image"
+                app:layout_constraintEnd_toEndOf="@id/iv_side_left_image"
+                app:layout_constraintTop_toTopOf="@id/iv_side_left_image"
+                app:layout_constraintBottom_toBottomOf="@id/iv_side_left_image"/>
+
+            <TextView
+                android:id="@+id/tv_car_side_left"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:scaleType="centerCrop"
+                android:text="@string/side_left_break"
+                app:layout_constraintEnd_toStartOf="@id/guideline_vertical_three"
+                app:layout_constraintStart_toStartOf="@id/guideline_vertical_two"
+                app:layout_constraintTop_toBottomOf="@id/iv_side_left_image" />
+
+            <ImageView
+                android:id="@+id/iv_side_right_image"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_image_default"
+                app:layout_constraintEnd_toStartOf="@id/guideline_inset_right"
+                app:layout_constraintStart_toStartOf="@id/guideline_vertical_three"
+                app:layout_constraintTop_toBottomOf="@id/tv_car_pictures" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_camera_white"
+                app:layout_constraintStart_toStartOf="@id/iv_side_right_image"
+                app:layout_constraintEnd_toEndOf="@id/iv_side_right_image"
+                app:layout_constraintTop_toTopOf="@id/iv_side_right_image"
+                app:layout_constraintBottom_toBottomOf="@id/iv_side_right_image"/>
+
+            <TextView
+                android:id="@+id/tv_car_side_right"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:scaleType="centerCrop"
+                android:text="@string/side_right_break"
+                app:layout_constraintEnd_toStartOf="@id/guideline_inset_right"
+                app:layout_constraintStart_toStartOf="@id/guideline_vertical_three"
+                app:layout_constraintTop_toBottomOf="@id/iv_side_right_image" />
+
+            <ImageView
+                android:id="@+id/iv_interior_front"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_image_default"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_one"
+                app:layout_constraintStart_toStartOf="@+id/guideline_inset_left"
+                app:layout_constraintTop_toBottomOf="@+id/tv_car_side_left" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_camera_white"
+                app:layout_constraintStart_toStartOf="@id/iv_interior_front"
+                app:layout_constraintEnd_toEndOf="@id/iv_interior_front"
+                app:layout_constraintTop_toTopOf="@id/iv_interior_front"
+                app:layout_constraintBottom_toBottomOf="@id/iv_interior_front"/>
+
+            <TextView
+                android:id="@+id/tv_interior_front"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:scaleType="centerCrop"
+                android:text="@string/interior_front_break"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_one"
+                app:layout_constraintStart_toStartOf="@+id/guideline_inset_left"
+                app:layout_constraintTop_toBottomOf="@id/iv_interior_front" />
+
+            <ImageView
+                android:id="@+id/iv_interior_back"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_image_default"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_two"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_one"
+                app:layout_constraintTop_toBottomOf="@+id/tv_car_side_left" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_camera_white"
+                app:layout_constraintStart_toStartOf="@id/iv_interior_back"
+                app:layout_constraintEnd_toEndOf="@id/iv_interior_back"
+                app:layout_constraintTop_toTopOf="@id/iv_interior_back"
+                app:layout_constraintBottom_toBottomOf="@id/iv_interior_back"/>
+
+
+            <TextView
+                android:id="@+id/tv_interior_back"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:scaleType="centerCrop"
+                android:text="@string/interior_back_break"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_two"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_one"
+                app:layout_constraintTop_toBottomOf="@id/iv_interior_back" />
+
+            <ImageView
+                android:id="@+id/iv_engine_image"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_image_default"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_three"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_two"
+                app:layout_constraintTop_toBottomOf="@+id/tv_car_side_left" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_camera_white"
+                app:layout_constraintStart_toStartOf="@id/iv_engine_image"
+                app:layout_constraintEnd_toEndOf="@id/iv_engine_image"
+                app:layout_constraintTop_toTopOf="@id/iv_engine_image"
+                app:layout_constraintBottom_toBottomOf="@id/iv_engine_image"/>
+
+            <TextView
+                android:id="@+id/tv_car_engine"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:scaleType="centerCrop"
+                android:text="Engine"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_three"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_two"
+                app:layout_constraintTop_toBottomOf="@id/iv_engine_image" />
+
+            <ImageView
+                android:id="@+id/iv_boot_image"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_image_default"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_inset_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_three"
+                app:layout_constraintTop_toBottomOf="@+id/tv_car_side_left" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_camera_white"
+                app:layout_constraintStart_toStartOf="@id/iv_boot_image"
+                app:layout_constraintEnd_toEndOf="@id/iv_boot_image"
+                app:layout_constraintTop_toTopOf="@id/iv_boot_image"
+                app:layout_constraintBottom_toBottomOf="@id/iv_boot_image"/>
+
+            <TextView
+                android:id="@+id/tv_car_boot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:scaleType="centerCrop"
+                android:text="Boot"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_inset_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_three"
+                app:layout_constraintTop_toBottomOf="@id/iv_boot_image" />
+
+            <Button
+                android:id="@+id/btn_profile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/round_corner_button"
+                android:text="Edit Profile"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_inset_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_inset_left"
+                app:layout_constraintTop_toBottomOf="@id/tv_interior_front" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_vertical_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.27" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_vertical_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_vertical_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.73" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+
+
+    <FrameLayout
+        android:id="@+id/bottom_bar_pattern"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorBlack"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    </FrameLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

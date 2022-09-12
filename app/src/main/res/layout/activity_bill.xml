@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.BillActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_bar_pattern"
+        android:layout_below="@id/toolbar"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/container_ride_completed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+
+                <ImageView
+
+                    android:id="@+id/check_animation"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/check" />
+
+                <TextView
+                    style="@style/TextView.Black.Medium.Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/margin_large"
+                    android:text="@string/ride_completed" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_rider_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/rider_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    tools:src="@drawable/no_image_available" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_rider_name"
+                        style="@style/TextView.Black.Small.Bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="@string/driver" />
+
+                    <TextView
+                        android:id="@+id/tv_driver_number"
+                        style="@style/TextView.Black.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="@string/driver" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_x_large"
+                android:background="@color/pure_white">
+
+
+                <RelativeLayout
+                    android:id="@+id/lin_trip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/margin_large"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_rider_source"
+                        style="@style/TextView.Black.Small"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
+                        android:layout_toStartOf="@+id/two_way"
+                        android:gravity="center"
+                        android:maxWidth="100dp"
+                        android:text="@string/indore" />
+
+                    <ImageView
+                        android:id="@+id/two_way"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:foreground="#48FFFFFF"
+                        android:src="@drawable/ic_right_arrow_forward" />
+
+                    <TextView
+                        android:id="@+id/tvDestination"
+                        style="@style/TextView.Black.Small"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_toEndOf="@+id/two_way"
+                        android:gravity="center"
+                        android:maxWidth="100dp"
+                        android:text="@string/dewas" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvCalAmount"
+                    style="@style/TextView_style_d"
+                    android:layout_below="@id/lin_trip"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/margin_xx_large"
+                    android:text="@string/calculated_amount"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvBillAmount_Value"
+                    style="@style/TextView_style_d"
+                    android:layout_below="@id/tvCalAmount"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:textSize="40sp"
+                    tools:text="₦49.99" />
+
+                <Button
+                    android:id="@+id/btDone"
+                    style="@style/Black_Button"
+                    android:layout_height="35dp"
+                    android:layout_below="@id/tvBillAmount_Value"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/done"
+                    android:textSize="18sp" />
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/bottom_bar_pattern"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorBlack">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_pattern_height"
+            android:adjustViewBounds="true"
+            android:alpha="0.75"
+            android:scaleType="centerCrop"
+            android:src="@drawable/drupp_pattern_3" />
+
+    </FrameLayout>
+</RelativeLayout>
+

@@ -1,0 +1,1240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_bar_background"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.RideActivity"
+    tools:showIn="@layout/app_bar_ride">
+
+
+    <fragment
+        android:id="@+id/image_Map"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_sign"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_sign"
+            android:layout_marginEnd="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_offline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/you_are_offline"
+            app:layout_constraintEnd_toStartOf="@+id/iv_go"
+            app:layout_constraintStart_toEndOf="@+id/iv_sign"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_go"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_go"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/sign_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_bus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/container_select_ride_type"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/submit"
+            android:src="@drawable/ic_bus"
+            android:visibility="gone"
+            app:backgroundTint="@color/colorWhite" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_driver_preference"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/container_select_ride_type"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_controls"
+            android:translationY="32dp"
+            android:visibility="gone"
+            app:backgroundTint="@color/colorWhite"
+            app:fabSize="mini" />
+
+        <FrameLayout
+            android:id="@+id/container_select_ride_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:visibility="visible">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/app_theme_color"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="16dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/app_theme_color">
+
+                    <View
+                        android:id="@+id/black_bar"
+                        android:layout_width="60dp"
+                        android:layout_height="6dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bar_black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_greetings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Good afternoon"
+                        android:textColor="@color/dark_grey"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/black_bar" />
+
+                    <TextView
+                        android:id="@+id/tv_driver_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Ezekiel Oluwade"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@android:color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_greetings" />
+
+                    <LinearLayout
+                        android:id="@+id/container_vehicle_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/app_theme_color"
+                        android:orientation="vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_driver_name">
+
+                        <TextView
+                            style="@style/TextView.White.Small"
+                            android:text="@string/select_ride_preference"
+                            android:textSize="14sp" />
+
+                        <Space style="@style/SpaceMiniTrim" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_ride_preference"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/round_corner_green_border"
+                            android:orientation="horizontal"
+                            android:paddingStart="5dp"
+                            android:paddingTop="8dp"
+                            android:paddingEnd="5dp"
+                            android:paddingBottom="8dp">
+
+                            <RadioButton
+                                android:id="@+id/rb_single_ride"
+                                android:layout_width="7dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:buttonTint="@android:color/black"
+                                android:checked="true"
+                                android:text="@string/single_ride"
+
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                android:textColor="@android:color/black"
+                                android:textSize="12sp" />
+
+                            <RadioButton
+                                android:id="@+id/rb_pool_ride"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:buttonTint="@android:color/black"
+                                android:checked="false"
+                                android:text="@string/pool_ride"
+                                android:textColor="@android:color/black"
+                                android:textSize="12sp" />
+
+                            <RadioButton
+                                android:id="@+id/rb_any"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:buttonTint="@android:color/black"
+                                android:checked="false"
+                                android:text="@string/any"
+                                android:textColor="@android:color/black"
+                                android:textSize="12sp" />
+                        </RadioGroup>
+
+                        <Space style="@style/SpaceMiniTrim" />
+
+                    </LinearLayout>
+
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.69" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </FrameLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/botRel1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_Map"
+                android:background="@drawable/round_corners_white_view"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/par_lin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:id="@+id/tvSource"
+                            style="@style/TextView_style_d"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/from"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvSourceCity"
+                            style="@style/TextView_style_d"
+                            android:layout_marginStart="8dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@string/indore"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:id="@+id/tvDestination1"
+                            style="@style/TextView_style_d"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/to"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvDestinationCity1"
+                            style="@style/TextView_style_d"
+                            android:layout_marginStart="16dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@string/dewas"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view_line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/par_lin"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@color/light_grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view_line1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvName1"
+                        style="@style/TextView_style_d"
+                        android:layout_marginStart="8dp"
+                        android:padding="4dp"
+                        android:text="@string/dummy_person_name"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/image_star"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="4dp"
+                        android:src="@drawable/ic_star"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/tvRatingUser"
+                        style="@style/TextView_style_d"
+                        android:gravity="center"
+                        android:text="@string/dummy_person_rating"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/image_phone"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@id/view_line1"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/round_circles"
+                    android:gravity="center">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/phone"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_phone_receiver" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view_line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/image_phone"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@color/light_grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_below="@id/view_line2"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="4dp">
+
+                    <Button
+                        android:id="@+id/btAccept"
+                        style="@style/Black_Button"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/accept" />
+
+                    <Button
+                        android:id="@+id/btDecline"
+                        style="@style/Black_Button"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/round_corner_button_grey"
+                        android:text="@string/decline" />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!--<androidx.cardview.widget.CardView
+            android:id="@+id/botRel2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_Map"
+                android:background="@drawable/round_corners_white_view"
+                android:padding="@dimen/padding_medium">
+
+                <RelativeLayout
+                    android:id="@+id/container_chat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/btn_chat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_medium"
+                            android:background="?selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_chat_ride" />
+
+                        <TextView
+                            android:id="@+id/tvPhoneNum"
+                            style="@style/TextView_style_d"
+                            android:drawableStart="@drawable/ic_phone_receiver"
+                            android:drawablePadding="@dimen/padding_medium"
+                            android:gravity="center"
+                            android:textSize="14sp"
+                            tools:text="@string/dummy_person_mobile" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="20dp"
+                        android:layout_centerInParent="true"
+                        android:background="@color/colorDarkGrey" />
+
+                    <TextView
+                        android:id="@+id/tv_rider_name"
+                        style="@style/TextView_style_d"
+                        android:layout_alignParentEnd="true"
+                        android:text="@string/dummy_person_name"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/container_chat"
+                    android:background="@color/colorDarkGrey" />
+
+                <LinearLayout
+                    android:id="@+id/view_from"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/container_chat"
+                    android:layout_margin="@dimen/margin_small"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/gDot"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:src="@drawable/green_dot" />
+
+                    <TextView
+                        android:id="@+id/tvDeparture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/from"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_rider_source"
+                        style="@style/TextView_style_b"
+                        android:layout_width="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp"
+                        tools:text="@string/indore" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/view_from"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/light_grey" />
+
+                <LinearLayout
+                    android:id="@+id/view_to"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view_line"
+                    android:layout_margin="@dimen/margin_small"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/rDot"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:src="@drawable/red_dot" />
+
+                    <TextView
+                        android:id="@+id/tvDestination"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/to"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_rider_destination"
+                        style="@style/TextView_style_b"
+                        android:layout_width="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="@string/dewas"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin_bts"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_below="@id/view_to"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_marginBottom="4dp">
+
+                    <Button
+                        android:id="@+id/btCancelRide"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/round_corner_button_grey"
+                        android:text="@string/cancel_ride"
+                        android:textColor="@color/pure_white" />
+
+                    <Button
+                        android:id="@+id/btStartRide"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/round_corner_button_black"
+                        android:text="@string/arrived"
+                        android:textColor="@color/pure_white" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btFinishRide"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/lin_bts"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/round_corner_button_black"
+                    android:text="@string/finish_ride"
+                    android:textColor="@color/pure_white"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/botRel2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/box_background_corner_radius_upper"
+            android:backgroundTint="@color/colorWhite"
+            android:paddingTop="20dp"
+            android:paddingBottom="16dp"
+            android:visibility="gone">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_rider_image"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/ic_profile"
+                app:layout_constraintStart_toStartOf="@id/guideline_main_left"
+                app:layout_constraintTop_toBottomOf="@+id/app_bar_layout" />
+
+            <TextView
+                android:id="@+id/tv_rider_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/roboto_medium"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/iv_rider_image"
+                app:layout_constraintTop_toBottomOf="@+id/app_bar_layout" />
+
+            <com.willy.ratingbar.ScaleRatingBar
+                android:id="@+id/rating_bar_rider"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@id/tv_rider_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_rider_name"
+                app:srb_clickable="false"
+                app:srb_drawableEmpty="@drawable/ic_star_border"
+                app:srb_drawableFilled="@drawable/ic_star_full"
+                app:srb_isIndicator="false"
+                app:srb_minimumStars="0"
+                app:srb_numStars="5"
+                app:srb_starHeight="20dp"
+                app:srb_starPadding="1dp"
+                app:srb_starWidth="20dp"
+                app:srb_stepSize="0.5" />
+
+
+            <TextView
+                android:id="@+id/tv_reviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:text="54 Reviews"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@id/rating_bar_rider"
+                app:layout_constraintTop_toBottomOf="@+id/rating_bar_rider" />
+
+            <ImageView
+                android:id="@+id/btn_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/btn_chat"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_call_green" />
+
+            <ImageView
+                android:id="@+id/btn_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_call"
+                app:layout_constraintEnd_toEndOf="@id/guideline_main_right"
+                app:layout_constraintTop_toTopOf="@+id/btn_call"
+                app:srcCompat="@drawable/ic_message_green" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_main_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.04" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_main_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.96" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_center_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <LinearLayout
+                android:id="@id/container_ride_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/container_with_border"
+                android:minHeight="40dp"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingEnd="10dp"
+                android:paddingRight="10dp"
+                app:layout_constraintEnd_toEndOf="@id/guideline_main_right"
+                app:layout_constraintStart_toStartOf="@id/guideline_main_left"
+                app:layout_constraintTop_toBottomOf="@id/tv_reviews">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_position" />
+
+                <Space
+                    style="@style/SpaceMiniTrim"
+                    android:layout_width="10dp" />
+
+                <TextView
+                    android:id="@+id/tv_rider_source"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:drawablePadding="10dp"
+                    android:focusableInTouchMode="true"
+                    android:singleLine="true"
+                    android:text="Source"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/container_payment_method"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@drawable/container_with_border"
+                android:minHeight="40dp"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingEnd="10dp"
+                android:paddingRight="10dp"
+                app:layout_constraintEnd_toEndOf="@id/guideline_main_right"
+                app:layout_constraintStart_toStartOf="@id/guideline_main_left"
+                app:layout_constraintTop_toBottomOf="@id/container_ride_type">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_pointer_red" />
+
+                <Space
+                    style="@style/SpaceMiniTrim"
+                    android:layout_width="10dp" />
+
+                <TextView
+                    android:id="@+id/tvDestination"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:drawablePadding="10dp"
+                    android:focusableInTouchMode="true"
+                    android:singleLine="true"
+                    android:text="Destination"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btStartRide"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_above="@+id/have_an_account"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/round_corner_button"
+                android:minWidth="@dimen/min_button_width"
+                android:text="Arrived"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+                app:layout_constraintEnd_toEndOf="@id/guideline_main_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_center_right"
+                app:layout_constraintTop_toBottomOf="@id/container_payment_method" />
+
+            <Button
+                android:id="@+id/btCancelRide"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/round_corner_button_unfilled"
+                android:minWidth="@dimen/min_button_width"
+                android:text="Cancel Ride"
+                android:textAllCaps="false"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_center_right"
+                app:layout_constraintStart_toEndOf="@id/guideline_main_left"
+                app:layout_constraintTop_toBottomOf="@id/container_payment_method" />
+
+            <Button
+                android:id="@+id/btFinishRide"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/round_corner_button"
+                android:minWidth="@dimen/min_button_width"
+                android:text="End Trip"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_main_right"
+                app:layout_constraintStart_toEndOf="@id/guideline_main_left"
+                app:layout_constraintTop_toBottomOf="@id/container_payment_method"
+                app:layout_goneMarginEnd="12dp" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.99" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:id="@+id/rel_pool"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_Map"
+                android:background="@color/pure_white"
+                tools:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvRiderDetails"
+                    style="@style/TextView_style_d"
+                    android:layout_centerHorizontal="true"
+                    android:padding="4dp"
+                    android:text="@string/ride_details"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvRiderDetails"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lin_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                        <TextView
+                            style="@style/TextView_style_d"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/name"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            style="@style/TextView_style_d"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/from"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            style="@style/TextView_style_d"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/to"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            style="@style/TextView_style_d"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/status"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/dyanmic_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+
+                    <RelativeLayout
+                        android:id="@+id/rel_w1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/round_solid_corners_white_view"
+                        android:visibility="gone"
+                        tools:visibility="gone">
+
+                        <LinearLayout
+                            android:id="@+id/lin_rider1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_Rider1_Name"
+                                style="@style/TextView_style_d"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/dummy_person_name"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_Rider1_SCity"
+                                style="@style/TextView_style_d"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/indore"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_Rider1_DCity"
+                                style="@style/TextView_style_d"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/dewas"
+                                android:textSize="12sp" />
+
+                            <Button
+                                android:id="@+id/tv_Rider1_Button_Start"
+                                style="@style/Black_Button"
+                                android:layout_width="0dp"
+                                android:layout_height="25dp"
+                                android:layout_weight="1"
+                                android:text="@string/start"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rel_rider1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/lin_rider1"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/image_rider1"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_margin="8dp"
+                                android:src="@drawable/ic_account" />
+
+                            <TextView
+                                android:id="@+id/tvFareRate1"
+                                style="@style/TextView_style_d"
+                                android:layout_centerVertical="true"
+                                android:layout_toEndOf="@id/image_rider1"
+                                android:text="@string/_5_12"
+                                android:textSize="14sp" />
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_toEndOf="@id/tvFareRate1"
+                                android:padding="2dp"
+                                android:src="@drawable/ic_phone_receiver"
+                                app:civ_border_width="1dp" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rel_w2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/round_solid_corners_white_view"
+                        android:visibility="gone"
+                        tools:visibility="gone">
+
+                        <LinearLayout
+                            android:id="@+id/lin_rider2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_Rider2_Name"
+                                style="@style/TextView_style_d"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/dummy_person_name"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_Rider2_SCity"
+                                style="@style/TextView_style_d"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/indore"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_Rider2_DCity"
+                                style="@style/TextView_style_d"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/dewas"
+                                android:textSize="12sp" />
+
+                            <Button
+                                android:id="@+id/tv_Rider2_Start"
+                                style="@style/Black_Button"
+                                android:layout_width="0dp"
+                                android:layout_height="25dp"
+                                android:layout_weight="1"
+                                android:text="@string/start"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rel_rider2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/lin_rider2"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/image_rider2"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_margin="8dp"
+                                android:src="@drawable/ic_account" />
+
+                            <TextView
+                                android:id="@+id/tvFareRate2"
+                                style="@style/TextView_style_d"
+                                android:layout_centerVertical="true"
+                                android:layout_toEndOf="@id/image_rider2"
+                                android:text="@string/_5_12"
+                                android:textSize="14sp" />
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_toEndOf="@id/tvFareRate2"
+                                android:padding="2dp"
+                                android:src="@drawable/ic_phone_receiver"
+                                app:civ_border_width="1dp" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rel_w3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginBottom="4dp"
+                        android:background="@drawable/round_solid_corners_white_view"
+                        android:visibility="gone"
+                        tools:visibility="gone">
+
+                        <LinearLayout
+                            android:id="@+id/lin_rider3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_Rider3_Name"
+                                style="@style/TextView_style_d"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/dummy_person_name"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_Rider3_SCity"
+                                style="@style/TextView_style_d"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/indore"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_Rider3_DCity"
+                                style="@style/TextView_style_d"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/dewas"
+                                android:textSize="12sp" />
+
+                            <Button
+                                android:id="@+id/tv_Rider3_Start"
+                                style="@style/Black_Button"
+                                android:layout_width="0dp"
+                                android:layout_height="25dp"
+                                android:layout_weight="1"
+                                android:text="@string/start"
+                                android:textSize="12sp" />
+
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rel_rider3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/lin_rider3"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/image_rider3"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_margin="8dp"
+                                android:src="@drawable/ic_account" />
+
+                            <TextView
+                                android:id="@+id/tvFareRate3"
+                                style="@style/TextView_style_d"
+                                android:layout_centerVertical="true"
+                                android:layout_toEndOf="@id/image_rider3"
+                                android:text="@string/_5_12"
+                                android:textSize="14sp" />
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_toEndOf="@id/tvFareRate3"
+                                android:padding="2dp"
+                                android:src="@drawable/ic_phone_receiver"
+                                app:civ_border_width="1dp" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

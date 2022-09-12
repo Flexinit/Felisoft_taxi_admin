@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_schedule_ride"
+            android:icon="@drawable/ic_calendar_vector"
+            android:title="Scheduled Rides" />
+        <item
+            android:id="@+id/nav_completed_rides"
+            android:icon="@drawable/ic_complete1"
+            android:title="@string/completed_rides" />
+        <item
+            android:id="@+id/nav_post_rides"
+            android:icon="@drawable/ic_post_office"
+            android:title="@string/post_a_ride"/>
+
+        <item
+            android:id="@+id/nav_notification"
+            android:icon="@drawable/ic_alarm"
+            android:title="@string/notification" />
+        <item
+            android:id="@+id/nav_payments"
+            android:icon="@drawable/ic_credit_card"
+            android:title="@string/payments" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/settings"
+            android:contentDescription="@string/terms_condition"
+            />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="LogOut" />
+        <item
+            android:id="@+id/nav_support"
+            android:icon="@drawable/ic_chat"
+            android:title="@string/support" />
+        <item
+            android:id="@+id/nav_legal"
+            android:icon="@drawable/ic_warning"
+            android:title="@string/legal"
+            android:checkable="false"
+            />
+        <item android:title="@string/privacy_policy"
+            android:id="@+id/nav_pp"/>
+        <item android:title="@string/tnc"
+            android:id="@+id/nav_tnc"/>
+
+
+
+
+
+    </group>
+
+
+</menu>

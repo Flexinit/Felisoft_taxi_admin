@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ui.UserSettingActivity">
+
+
+    <TextView
+        android:id="@+id/text_basic_info"
+        style="@style/TextView.Black.Small"
+        android:layout_width="match_parent"
+        android:background="@color/chat_white"
+        android:paddingStart="16sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="Basic Information" />
+
+
+    <LinearLayout
+        android:id="@+id/top_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/text_basic_info"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/container_with_border"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvNewsFeed"
+                style="@style/TextView.Black.Small"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/news_feed" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swNewsFeed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.40"
+                android:theme="@style/BrandedSwitch.control" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/container_with_border"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+
+            <TextView
+                android:id="@+id/tv_shopping"
+                style="@style/TextView.Black.Small"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/shopping" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:theme="@style/BrandedSwitch.control" />
+        </LinearLayout>
+        <Space style="@style/SpaceMini" />
+
+
+        <TextView
+            android:id="@+id/tv_myvehicle"
+            style="@style/TextView.Black.Small"
+            android:layout_width="match_parent"
+            android:background="@android:color/white"
+            android:drawableStart="@drawable/ic_car_front"
+            android:drawableEnd="@drawable/ic_right_arrow"
+            android:drawablePadding="8dp"
+            android:paddingStart="16dp"
+            android:text="My Vehicle" />
+
+        <Space style="@style/SpaceMini" />
+
+
+        <TextView
+            android:id="@+id/btn_personal_documents"
+            style="@style/TextView.Black.Small"
+            android:layout_width="match_parent"
+            android:background="@android:color/white"
+            android:drawableStart="@drawable/ic_script_support"
+            android:drawableEnd="@drawable/ic_right_arrow"
+            android:drawablePadding="8dp"
+            android:paddingStart="16dp"
+            android:text="Personal Documents" />
+
+        <Space style="@style/SpaceMini" />
+
+
+        <TextView
+            android:id="@+id/btn_bank_details"
+            style="@style/TextView.Black.Small"
+            android:layout_width="match_parent"
+            android:background="@android:color/white"
+            android:drawableStart="@drawable/ic_bank"
+            android:drawableEnd="@drawable/ic_right_arrow"
+            android:drawablePadding="8dp"
+            android:paddingStart="16dp"
+            android:text="Bank Details" />
+
+        <Space style="@style/SpaceMini" />
+
+
+        <TextView
+            android:id="@+id/btn_change_password"
+            style="@style/TextView.Black.Small"
+            android:layout_width="match_parent"
+            android:background="@android:color/white"
+            android:drawableStart="@drawable/ic_padlock"
+            android:drawablePadding="8dp"
+            android:drawableEnd="@drawable/ic_right_arrow"
+            android:paddingStart="16dp"
+            android:text="@string/change_password" />
+
+        <Space style="@style/SpaceMini" />
+
+        <TextView
+            android:id="@+id/text_legal"
+            style="@style/TextView.Black.Small"
+            android:layout_width="match_parent"
+            android:background="@color/chat_white"
+            android:paddingStart="16sp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Legal" />
+        <Space style="@style/SpaceMini" />
+        <TextView
+            android:id="@+id/btn_code_of_conduct"
+            style="@style/TextView.Black.Small"
+            android:layout_width="match_parent"
+            android:background="@android:color/white"
+            android:drawableEnd="@drawable/ic_right_arrow"
+            android:paddingStart="16dp"
+            android:text="Code of Conduct" />
+        <Space style="@style/SpaceMini" />
+        <TextView
+            android:id="@+id/tv_terms_and_condition"
+            style="@style/TextView.Black.Small"
+            android:layout_width="match_parent"
+            android:background="@android:color/white"
+            android:drawableEnd="@drawable/ic_right_arrow"
+            android:paddingStart="16dp"
+            android:text="@string/terms_condition" />
+
+        <Space style="@style/SpaceMini" />
+
+        <TextView
+            android:id="@+id/tv_privacy_policy"
+            style="@style/TextView.Black.Small"
+            android:layout_width="match_parent"
+            android:background="@android:color/white"
+            android:paddingStart="16dp"
+            android:drawableEnd="@drawable/ic_right_arrow"
+            android:text="@string/privacy_policy" />
+
+        <Space style="@style/SpaceMini" />
+
+        <Space style="@style/SpaceMini" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

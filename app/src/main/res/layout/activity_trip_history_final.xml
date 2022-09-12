@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TripHistoryFinal">
+
+    <include layout="@layout/app_toolbar_trip_history" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp">
+
+        <TextView
+            android:id="@+id/tv_Trip_His_Time"
+            style="@style/TextView_style_d"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/_3_april_2019_5_20_am" />
+
+
+        <TextView
+            android:id="@+id/tvSource"
+            style="@style/TextView_style_d"
+            android:layout_below="@id/tv_Trip_His_Time"
+            android:layout_margin="15dp"
+            android:text="@string/source" />
+
+        <TextView
+            android:id="@+id/tvSourceCity"
+            style="@style/TextView_style_d"
+            android:layout_below="@id/tv_Trip_His_Time"
+            android:layout_margin="15dp"
+            android:layout_toRightOf="@id/tvSource"
+            android:text="@string/indore"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/tvDestination"
+            style="@style/TextView_style_d"
+            android:layout_below="@id/tvSource"
+            android:layout_marginStart="15dp"
+            android:text="@string/destination" />
+
+        <TextView
+            android:id="@+id/tv_rider_destination"
+            style="@style/TextView_style_d"
+            android:layout_below="@id/tvSource"
+            android:layout_marginStart="15dp"
+            android:layout_toRightOf="@id/tvDestination"
+            android:text="Dewas"
+            android:textColor="@color/grey" />
+
+        <RatingBar
+            android:id="@+id/rate_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_below="@id/tvDestination"
+            android:layout_margin="15dp"
+            android:rating="5"
+            android:theme="@style/RatingBar" />
+
+        <TextView
+            style="@style/TextView_style_d"
+            android:layout_below="@id/tvDestination"
+            android:layout_marginTop="25dp"
+            android:layout_toRightOf="@id/rate_bar"
+            android:text="(5.0)" />
+
+        <TextView
+            android:id="@+id/tvBillAmount"
+            style="@style/TextView_style_d"
+            android:layout_below="@id/rate_bar"
+            android:layout_marginStart="15dp"
+            android:text="Amount Paid: " />
+
+        <TextView
+            style="@style/TextView_style_d"
+            android:layout_below="@id/rate_bar"
+            android:layout_toRightOf="@id/tvBillAmount"
+            android:text="@string/_5_12"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

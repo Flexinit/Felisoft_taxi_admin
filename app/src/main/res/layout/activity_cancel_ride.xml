@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pure_white">
+
+    <include layout="@layout/toolbar_common" />
+
+    <TextView
+        android:id="@+id/tvAddReason"
+        style="@style/TextView_style_d"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="70dp"
+        android:text="@string/add_reason_to_cancel_the_ride"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/LinParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvAddReason"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textview_background"
+            android:gravity="center"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/tvCReason1"
+                style="@style/TextView_style_d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="0dp"
+                android:text="@string/unable_to_contact_the_user"
+                android:textAlignment="viewStart"
+                android:textColor="@color/grey" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/textview_background"
+            android:gravity="center"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/tvCReason2"
+                style="@style/TextView_style_d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/user_denied_coming"
+                android:textAlignment="viewStart"
+                android:textColor="@color/grey" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/textview_background"
+            android:gravity="center"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/tvCReason3"
+                style="@style/TextView_style_d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/user_location_is_far_away"
+                android:textAlignment="viewStart"
+                android:textColor="@color/grey" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/textview_background"
+            android:gravity="center"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/tvCReason4"
+                style="@style/TextView_style_d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/my_reason_is_not_listed"
+                android:textAlignment="viewStart"
+                android:textColor="@color/grey" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btReasonCancel"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/LinParent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/round_corner_button_black"
+        android:text="@string/cancel_ride"
+        android:textColor="@color/pure_white" />
+
+    <FrameLayout
+        android:id="@+id/bottom_bar_pattern"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorBlack">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:adjustViewBounds="true"
+            android:alpha="0.75"
+            android:scaleType="matrix"
+            android:src="@drawable/drupp_pattern_3" />
+
+    </FrameLayout>
+
+</RelativeLayout>
