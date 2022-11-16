@@ -9,6 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
+use Log;
 
 class ClientsController extends AppBaseController
 {
@@ -30,6 +31,8 @@ class ClientsController extends AppBaseController
     public function index(Request $request)
     {
         $clients = $this->clientsRepository->all();
+        Log::info('Clients '.$clients);
+
 
         return view('clients.index')
             ->with('clients', $clients);
